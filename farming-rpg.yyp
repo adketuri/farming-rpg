@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "013eb27c-b957-4b58-b355-1bcf47a9e9fa",
+            "Value": {
+                "id": "05676b14-9a63-4392-b3aa-a0927a0e259e",
+                "resourcePath": "objects\\o_collision\\o_collision.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "02325624-ab42-45a7-ad03-5e09f0363815",
             "Value": {
                 "id": "917b80cf-be3e-4104-8f46-7358681d2f94",
@@ -122,7 +130,7 @@
             "Key": "a0c7cccb-ba27-4a11-bff9-6861a1966241",
             "Value": {
                 "id": "dfb865a6-33ba-4f55-8e5e-e9cde305bd4c",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\r_0\\r_0.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -188,6 +196,14 @@
                 "id": "b37be410-8bdf-4009-b573-6e08a2aa07c6",
                 "resourcePath": "views\\edd1723e-c666-44c9-868f-f241da51ac39.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ef374f3c-9da9-4e75-9ae4-d0cdd41cc69f",
+            "Value": {
+                "id": "05612850-7732-4b96-a05a-71afe665ceda",
+                "resourcePath": "sprites\\s_collision\\s_collision.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

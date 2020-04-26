@@ -10,8 +10,8 @@ input_run = keyboard_check(vk_shift);
 
 // alter speed
 spd = SPEED
-if (input_walk or input_run) {
-	spd = abs((input_walk*SPEED/2) - (input_run*SPEED*2));
+if (input_walk xor input_run) {
+	spd = abs((input_walk*WALK_SPEED) - (input_run*RUN_SPEED));
 } 
 
 // set intended movement

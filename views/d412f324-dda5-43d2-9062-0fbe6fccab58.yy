@@ -4,11 +4,9 @@
     "mvc": "1.1",
     "name": "d412f324-dda5-43d2-9062-0fbe6fccab58",
     "children": [
-        "ef374f3c-9da9-4e75-9ae4-d0cdd41cc69f",
-        "54867729-c280-4290-9d41-bf55c242f2a1",
-        "06b86a0f-9390-416c-9232-081cdc7cc6b2",
-        "de52e491-cb14-4744-8e42-1ac930559155",
-        "9a6da484-e41c-4277-9445-754df2af5e03"
+        "6492c3ae-d38f-4ace-ab02-f6feb1e48bd6",
+        "50a93a33-7fbe-4da2-aa01-bb449d3cb864",
+        "02d214e6-3f78-448b-9a7e-3df2098880f5"
     ],
     "filterType": "GMSprite",
     "folderName": "sprites",

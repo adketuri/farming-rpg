@@ -3,3 +3,4 @@
 #macro RUN_SPEED  200
 #macro SPR_W 16
 #macro SPR_H 29
+#macro DEBUG true

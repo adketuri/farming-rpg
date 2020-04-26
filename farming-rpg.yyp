@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "06b86a0f-9390-416c-9232-081cdc7cc6b2",
+            "Value": {
+                "id": "7b8c49ce-980e-4d06-8bb8-1c433aacc049",
+                "resourcePath": "sprites\\s_player_collision\\s_player_collision.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1fb36800-550e-44d1-8f0c-bb36f5a9735b",
             "Value": {
                 "id": "aa7505d6-542f-4dc2-ae4b-be55376e367b",

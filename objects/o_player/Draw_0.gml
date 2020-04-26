@@ -14,7 +14,9 @@ if (move_x < 0) {
 	x_frame = 1;	
 }
 
-draw_sprite_part(s_player, 0, floor(x_frame) * SPR_W, floor(y_frame) * SPR_H, SPR_W, SPR_H, x, y);
+var xx = x - x_offset;
+var yy = y - y_offset;
+draw_sprite_part(s_player, 0, floor(x_frame) * SPR_W, floor(y_frame) * SPR_H, SPR_W, SPR_H, xx, yy);
 
 if (x_frame <= anim_length ) {
 	x_frame += anim_speed / room_speed;
@@ -22,3 +24,5 @@ if (x_frame <= anim_length ) {
 if (x_frame >= anim_length) {
 	x_frame = 0;
 }
+
+if (DEBUG) draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_yellow, c_yellow, c_yellow, c_yellow, true);

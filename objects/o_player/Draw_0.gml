@@ -1,6 +1,4 @@
 /// @description Draw player
-var anim_length = 4;
-var anim_speed = 9;
 
 if (move_x < 0) {
 	y_frame = 2; 	
@@ -16,7 +14,7 @@ if (move_x < 0) {
 
 var xx = x - x_offset;
 var yy = y - y_offset;
-draw_sprite_part(s_player, 0, floor(x_frame) * SPR_W, floor(y_frame) * SPR_H, SPR_W, SPR_H, xx, yy);
+draw_sprite_part(sprite_sheet, 0, floor(x_frame) * frame_w, floor(y_frame) * frame_h, frame_w, frame_h, xx, yy);
 
 if (x_frame <= anim_length ) {
 	x_frame += anim_speed / room_speed;

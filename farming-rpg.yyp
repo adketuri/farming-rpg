@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "de52e491-cb14-4744-8e42-1ac930559155",
+            "Value": {
+                "id": "3f675271-cf5f-4d1e-9525-0c111828ec66",
+                "resourcePath": "sprites\\s_npc\\s_npc.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "edd1723e-c666-44c9-868f-f241da51ac39",
             "Value": {
                 "id": "b37be410-8bdf-4009-b573-6e08a2aa07c6",

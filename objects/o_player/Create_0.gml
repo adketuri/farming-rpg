@@ -1,6 +1,13 @@
 /// @description Create player
 
-x_frame = 1 * SPR_H;
+anim_length = 4;
+anim_speed = 9;
+sprite_sheet = s_npc
+
+frame_w = sprite_get_width(sprite_index);
+frame_h = sprite_get_height(sprite_index);
+
+x_frame = 1 * frame_h;
 y_frame = 0;
 
 move_x = 0;

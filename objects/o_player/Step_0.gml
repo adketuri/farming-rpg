@@ -15,35 +15,35 @@ if (input_walk xor input_run) {
 } 
 
 // set intended movement
-moveX = 0
-moveY = 0
-moveX = (input_right - input_left) * spd / room_speed;
-if (moveX == 0) {
-	moveY = (input_down - input_up) * spd / room_speed;
+move_x = 0
+move_y = 0
+move_x = (input_right - input_left) * spd / room_speed;
+if (move_x == 0) {
+	move_y = (input_down - input_up) * spd / room_speed;
 }
 
 // check for a collision
-if (moveX != 0 && place_meeting(x + moveX, y, o_collision)){
-	repeat(abs(moveX)){
-		if (!place_meeting(x + sign(moveX), y, o_collision)){
-			x+= sign(moveX);
+if (move_x != 0 && place_meeting(x + move_x, y, o_collision)){
+	repeat(abs(move_x)){
+		if (!place_meeting(x + sign(move_x), y, o_collision)){
+			x+= sign(move_x);
 		} else {
 			break;
 		}
 	}
-	moveX = 0;
+	move_x = 0;
 }
-if (moveY != 0 && place_meeting(x, y + moveY, o_collision)){
-	repeat(abs(moveY)){
-		if (!place_meeting(x, y+sign(moveY), o_collision)){
-			y+= sign(moveY);
+if (move_y != 0 && place_meeting(x, y + move_y, o_collision)){
+	repeat(abs(move_y)){
+		if (!place_meeting(x, y+sign(move_y), o_collision)){
+			y+= sign(move_y);
 		} else {
 			break;
 		}
 	}
-	moveY = 0;
+	move_y = 0;
 }
 
 // apply movement
-x += moveX;
-y += moveY;
+x += move_x;
+y += move_y;

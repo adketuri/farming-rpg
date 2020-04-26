@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "26ddeb43-a45d-49be-becd-b619fd6800ef",
+            "Value": {
+                "id": "e7a527db-4e96-4dda-bbbc-23c3368f9172",
+                "resourcePath": "tilesets\\t_terrain\\t_terrain.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "27da4b3b-d8dc-4df4-bb7a-efc16675a667",
             "Value": {
                 "id": "ad8909df-f0c1-4f81-8eec-7aed52dadd15",
@@ -151,6 +159,14 @@
             }
         },
         {
+            "Key": "9a6da484-e41c-4277-9445-754df2af5e03",
+            "Value": {
+                "id": "33188789-ad1c-4102-8633-282759d25cd5",
+                "resourcePath": "sprites\\s_terrain\\s_terrain.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a0c7cccb-ba27-4a11-bff9-6861a1966241",
             "Value": {
                 "id": "dfb865a6-33ba-4f55-8e5e-e9cde305bd4c",
@@ -164,6 +180,14 @@
                 "id": "29df6c50-d43b-4dca-8a25-d0b2f4e0c810",
                 "resourcePath": "views\\a15d36ab-f84e-455b-8310-c27256ba58a5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "add12c81-2ffe-4953-8ccb-cdb4679356af",
+            "Value": {
+                "id": "396f080d-4f29-4bd0-8004-6e5daa64eac1",
+                "resourcePath": "scripts\\tile_collision\\tile_collision.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -240,7 +264,8 @@
         }
     ],
     "script_order": [
-        "00647d75-1962-4c7b-8a74-d6af7994e2c7"
+        "00647d75-1962-4c7b-8a74-d6af7994e2c7",
+        "add12c81-2ffe-4953-8ccb-cdb4679356af"
     ],
     "tutorial": ""
 }

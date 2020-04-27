@@ -9,7 +9,7 @@
             "modelName": "GMAutoTileSet",
             "mvc": "1.0",
             "closed_edge": false,
-            "name": "autotile_1",
+            "name": "dirt_path",
             "tiles": [
                 151,
                 152,
@@ -65,7 +65,7 @@
             "modelName": "GMAutoTileSet",
             "mvc": "1.0",
             "closed_edge": false,
-            "name": "autotile_2",
+            "name": "tree_canopy",
             "tiles": [
                 41,
                 44,
@@ -90,7 +90,7 @@
             "modelName": "GMAutoTileSet",
             "mvc": "1.0",
             "closed_edge": false,
-            "name": "autotile_3",
+            "name": "tall_grass",
             "tiles": [
                 105,
                 108,
@@ -107,6 +107,31 @@
                 121,
                 120,
                 122,
+                0
+            ]
+        },
+        {
+            "id": "71b2ff1a-621d-4c59-a810-9d6c0216c991",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "cave_ceiling",
+            "tiles": [
+                210,
+                0,
+                0,
+                194,
+                0,
+                209,
+                0,
+                193,
+                0,
+                0,
+                211,
+                195,
+                226,
+                225,
+                227,
                 0
             ]
         }

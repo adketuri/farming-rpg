@@ -59,6 +59,56 @@
                 236,
                 237
             ]
+        },
+        {
+            "id": "e7067193-24e9-4f7a-af40-541fb3e6cf71",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "autotile_2",
+            "tiles": [
+                41,
+                44,
+                43,
+                25,
+                28,
+                40,
+                0,
+                24,
+                27,
+                0,
+                42,
+                26,
+                57,
+                56,
+                58,
+                0
+            ]
+        },
+        {
+            "id": "b3ae54da-e53c-4e83-a056-ff0192fdbc8c",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "autotile_3",
+            "tiles": [
+                105,
+                108,
+                107,
+                89,
+                92,
+                104,
+                0,
+                88,
+                91,
+                0,
+                106,
+                90,
+                121,
+                120,
+                122,
+                0
+            ]
         }
     ],
     "macroPageTiles": {

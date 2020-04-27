@@ -1,8 +1,5 @@
 /// @description Move NPC
 
-show_debug_message(move_x);
-show_debug_message(move_y);
-
 // check for a collision
 collision_layer = layer_tilemap_get_id("Collisions")
 if (move_x != 0 && tile_collision(x + move_x, y, collision_layer)){

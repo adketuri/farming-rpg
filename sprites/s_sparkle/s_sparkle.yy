@@ -2,7 +2,7 @@
     "id": "3714fbdf-4249-44be-ae4e-9ba37e00ca78",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_sparkle_strip5",
+    "name": "s_sparkle",
     "For3D": false,
     "HTile": false,
     "VTile": false,

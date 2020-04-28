@@ -2,7 +2,7 @@
     "id": "1fc67a89-d371-4194-b68f-c1f25b313fa3",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_crops_picked_strip7",
+    "name": "s_crops_picked",
     "For3D": false,
     "HTile": false,
     "VTile": false,

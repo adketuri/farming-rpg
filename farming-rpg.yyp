@@ -114,7 +114,7 @@
             "Key": "1fc67a89-d371-4194-b68f-c1f25b313fa3",
             "Value": {
                 "id": "0454d6db-1d71-4e31-91ac-a8db141572b6",
-                "resourcePath": "sprites\\s_crops_picked_strip7\\s_crops_picked_strip7.yy",
+                "resourcePath": "sprites\\s_crops_picked\\s_crops_picked.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -162,7 +162,7 @@
             "Key": "3714fbdf-4249-44be-ae4e-9ba37e00ca78",
             "Value": {
                 "id": "d7e1d919-bb4a-42e9-bc07-9830bdf60bf1",
-                "resourcePath": "sprites\\s_sparkle_strip5\\s_sparkle_strip5.yy",
+                "resourcePath": "sprites\\s_sparkle\\s_sparkle.yy",
                 "resourceType": "GMSprite"
             }
         },

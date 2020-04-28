@@ -1,5 +1,8 @@
 /// @description Move the camera independently
+x += (x_to - x) / 10;
+y += (y_to - y) / 10;
 
-x = clamp(x, following.x - h_border, following.x + h_border);
-y = clamp(y, following.y - v_border, following.y + v_border);
-
+if (following != noone) {
+	x_to = clamp(x, following.x - h_border, following.x + h_border);
+	y_to = clamp(y, following.y - v_border, following.y + v_border);
+}

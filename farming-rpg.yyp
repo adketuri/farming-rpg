@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "ca859175-7637-441b-8343-2c1773f799f0",
+            "Value": {
+                "id": "cdd15f09-120e-4b7f-aea3-e6ff876b06f4",
+                "resourcePath": "objects\\o_transition\\o_transition.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cb15bc82-14ac-4ad9-a565-550c0caa5015",
             "Value": {
                 "id": "46c9dad3-8cca-4432-beda-f959008d5bb1",

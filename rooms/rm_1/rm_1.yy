@@ -9,15 +9,42 @@
     "instanceCreationOrderIDs": [
         "65201b61-2691-4697-99bc-8c90219564a7",
         "b30b7947-7f94-45ad-823b-080734b1cda1",
-        "7bdc606f-2629-4300-a099-8bed8adbdf98"
+        "7bdc606f-2629-4300-a099-8bed8adbdf98",
+        "f672fb18-cc9a-4a53-88b5-86b8849c9b95"
     ],
     "IsDnD": false,
     "layers": [
         {
+            "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
+            "name": "Transitions",
+            "id": "25aca2bc-32f7-4271-ad52-a555763a1398",
+            "depth": 0,
+            "grid_x": 16,
+            "grid_y": 16,
+            "hierarchyFrozen": false,
+            "hierarchyVisible": true,
+            "inheritLayerDepth": false,
+            "inheritLayerSettings": false,
+            "inheritSubLayers": false,
+            "inheritVisibility": false,
+            "instances": [
+{"name": "inst_7DE0D4EC","id": "f672fb18-cc9a-4a53-88b5-86b8849c9b95","colour": { "Value": 4294967295 },"creationCodeFile": "InstanceCreationCode_inst_7DE0D4EC.gml","creationCodeType": ".gml","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_7DE0D4EC","objId": "ca859175-7637-441b-8343-2c1773f799f0","properties": null,"rotation": 0,"scaleX": 0.25,"scaleY": 0.25,"mvc": "1.1","x": 400,"y": 80}
+            ],
+            "layers": [
+
+            ],
+            "m_parentID": "00000000-0000-0000-0000-000000000000",
+            "m_serialiseFrozen": false,
+            "modelName": "GMRInstanceLayer",
+            "mvc": "1.0",
+            "userdefined_depth": false,
+            "visible": true
+        },
+        {
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Collisions",
             "id": "682c74e7-f141-49f0-86a8-cd26faabb140",
-            "depth": 0,
+            "depth": 100,
             "grid_x": 16,
             "grid_y": 16,
             "hierarchyFrozen": false,
@@ -82,7 +109,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "UpperTiles",
             "id": "b1ddd368-5bd9-4115-9f71-e6a737c9a5c4",
-            "depth": 100,
+            "depth": 200,
             "grid_x": 16,
             "grid_y": 16,
             "hierarchyFrozen": false,
@@ -147,7 +174,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Instances",
             "id": "99fb32fa-c7bb-4ea6-9303-08f31e926264",
-            "depth": 200,
+            "depth": 300,
             "grid_x": 16,
             "grid_y": 16,
             "hierarchyFrozen": false,
@@ -175,7 +202,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "LowerTiles",
             "id": "b98029e0-3fe1-457b-a4f0-82ee1454ef41",
-            "depth": 300,
+            "depth": 400,
             "grid_x": 16,
             "grid_y": 16,
             "hierarchyFrozen": false,
@@ -214,8 +241,8 @@
                     49,49,49,49,49,49,183,151,151,151,151,151,153,219,120,121,122,49,88,89,90,50,82,49,183,151,157,236,104,105,105,106,49,96,80,81,81,64,65,65,
                     49,49,49,49,49,49,231,203,167,151,155,203,203,221,49,49,49,49,104,105,106,50,98,49,231,167,199,49,120,121,92,107,89,90,96,97,97,80,81,81,
                     49,49,49,49,49,49,49,49,49,49,221,49,49,49,49,49,88,89,108,105,106,50,88,89,90,231,169,188,236,49,104,105,105,106,49,49,49,96,97,97,
-                    49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,104,105,105,105,106,50,104,105,107,90,183,199,49,49,120,121,121,122,49,49,49,49,49,49,
-                    49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,120,121,92,105,106,49,120,92,105,106,231,173,216,189,187,187,188,216,189,219,49,49,49,49,
+                    49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,104,105,105,105,106,50,104,105,107,90,183,199,49,233,120,121,121,122,233,49,49,49,49,49,
+                    49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,120,121,92,105,106,49,120,92,105,106,231,173,216,170,187,187,188,216,170,219,49,49,49,49,
                     49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,120,121,122,49,49,120,121,122,49,235,49,185,203,167,199,49,231,205,189,188,216,189,
                     49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,235,49,231,221,49,49,49,231,221,49,231,
                     49,49,49,49,49,49,49,49,49,88,89,90,49,49,113,114,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,

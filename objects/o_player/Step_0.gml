@@ -1,5 +1,7 @@
 /// @description Move player and handle collisions
 
+if (game.transitioning) return;
+
 // poll keyboard input
 input_left = keyboard_check(vk_left);
 input_right = keyboard_check(vk_right);
@@ -22,7 +24,13 @@ if (move_x == 0) {
 	move_y = (input_down - input_up) * spd / room_speed;
 }
 
-// check for a collision
+
+// get direction player is facing
+if (move_x != 0) facing = move_x < 0 ? dir.left : dir.right;
+if (move_y != 0) facing = move_y < 0 ? dir.up : dir.down;
+if (move_x == 0 && move_y == 0) facing = -1;
+
+// check for a collision with tiles
 collision_layer = layer_tilemap_get_id("Collisions")
 if (move_x != 0 && tile_collision(x + move_x, y, collision_layer)){
 	repeat(abs(move_x)){
@@ -63,6 +71,18 @@ if (move_y != 0 && place_meeting(x, y + move_y, o_collision)){
 		}
 	}
 	move_y = 0;
+}
+
+// check for collision with transitions
+var inst = instance_place(x, y, o_transition);
+if (inst != noone && facing == inst.player_facing_before){
+	with(game){
+		spawn_room = inst.target_room;
+		spawn_x = inst.target_x;
+		spawn_y = inst.target_y;
+		spawn_player_facing = inst.player_facing_after;
+		transitioning = true;
+	}
 }
 
 // apply movement

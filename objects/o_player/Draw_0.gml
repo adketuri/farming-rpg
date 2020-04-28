@@ -1,12 +1,12 @@
 /// @description Draw player
 
-if (move_x < 0) {
+if (facing == dir.left) {
 	y_frame = 2; 	
-} else if (move_x > 0) {
+} else if (facing == dir.right) {
 	y_frame = 1;	
-} else if (move_y < 0) {
+} else if (facing == dir.up) {
 	y_frame = 3; 	
-} else if (move_y > 0) {
+} else if (facing == dir.down) {
 	y_frame = 0;	
 } else {
 	x_frame = 1;	

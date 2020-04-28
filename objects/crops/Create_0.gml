@@ -1,5 +1,7 @@
 /// @description Create crop manager
 ds_crops_types = 0;
+ds_crops_instances = 0;
+
 show_debug_message("Create CropManager")
 enum crop {
 	tomato, potato, carrot, artichoke, chili, cucumber, corn 	

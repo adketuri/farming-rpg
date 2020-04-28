@@ -18,3 +18,5 @@ select_crop = 0;
 
 mx = 0;
 my = 0;
+
+cell_size = 16;

@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+room_w = room_width;
+room_h = room_height;
+
 if (spawn_room == -1) exit;
 
 o_player.x = spawn_x;

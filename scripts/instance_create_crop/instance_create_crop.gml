@@ -4,7 +4,9 @@
 ///@arg crop_type
 
 // create instance
-var inst = instance_create_layer(argument0, argument1, "Instances", o_crop);
+var xx = (argument0 div cell_size) * cell_size + cell_size / 2;
+var yy = (argument1 div cell_size) * cell_size + cell_size / 2;
+var inst = instance_create_layer(xx, yy, "Instances", o_crop);
 
 // Give crop characteristics 
 with (inst) {

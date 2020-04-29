@@ -12,3 +12,20 @@ if (planting){
 		instance_create_crop(mx, my, select_crop);
 	}
 }
+
+if (instance_exists(o_crop) && keyboard_check_pressed(ord("G"))){
+	with(o_crop){
+		if (growth_stage >= max_growth_stage){
+			growth_stage = max_growth_stage;
+			fully_grown = true;
+			alarm[1] = 1;
+		} else {
+			days_old++;
+			var first_growth = 0;
+			if (days_old > 0){
+				first_growth = 1;	
+			}
+			growth_stage = first_growth + (days_old div growth_stage_duration);
+		}
+	}
+}

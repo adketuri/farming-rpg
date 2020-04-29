@@ -23,7 +23,7 @@ if (cell != 0) {
 }
 if (!soil_at(argument0, argument1)){
 	show_debug_message("Missing Soil");
-	return false;	
+	return false;
 }
 
 // create instance

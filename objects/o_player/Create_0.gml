@@ -1,4 +1,5 @@
 /// @description Create player
+event_inherited();
 
 anim_length = 4;
 anim_speed = 9;

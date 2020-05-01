@@ -1,4 +1,5 @@
 /// @description Create a crop
+collideable = false;
 
 frame_width = 24;
 frame_height = 48;

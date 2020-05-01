@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "61d789a3-86f8-4152-91bb-d81c57a752b9",
+            "Value": {
+                "id": "248087a5-0684-4878-a79a-2c01c1d8e1b1",
+                "resourcePath": "objects\\par_depthobject\\par_depthobject.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6492c3ae-d38f-4ace-ab02-f6feb1e48bd6",
             "Value": {
                 "id": "c84c9e2e-f569-4902-a16a-806cf8055327",
@@ -212,6 +220,14 @@
                 "id": "99ea4fd1-1a1f-449f-9871-761b9e597348",
                 "resourcePath": "rooms\\rm_2\\rm_2.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "814c2c35-dd27-4346-b461-8f6940e70b5a",
+            "Value": {
+                "id": "f5e44150-8f0d-4e2e-bcdd-a18dc1e07bd6",
+                "resourcePath": "objects\\depthsorter\\depthsorter.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -319,6 +335,14 @@
             }
         },
         {
+            "Key": "b2d547f9-9055-4aff-9ef2-6bdefffe1397",
+            "Value": {
+                "id": "179997c4-db27-4c1a-aec5-1d4ffa08ad7d",
+                "resourcePath": "views\\b2d547f9-9055-4aff-9ef2-6bdefffe1397.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "b48152c1-d9de-4b89-a27a-940e8c59ccee",
             "Value": {
                 "id": "d5448a43-3eae-4dde-9836-e65d7eee65eb",
@@ -395,6 +419,14 @@
             "Value": {
                 "id": "cb58287b-2587-48b1-b7a8-70bf20de301f",
                 "resourcePath": "views\\d412f324-dda5-43d2-9062-0fbe6fccab58.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d71d5280-4c4b-4683-85f2-7d5004c8856b",
+            "Value": {
+                "id": "6ea02c09-aaaf-49d9-8151-bab00a74f414",
+                "resourcePath": "views\\d71d5280-4c4b-4683-85f2-7d5004c8856b.yy",
                 "resourceType": "GMFolder"
             }
         },

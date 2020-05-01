@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "49573b07-3f65-42c0-a1b7-5a73d5ac01b5",
+            "Value": {
+                "id": "20257e60-0447-4f60-aa26-efa065496432",
+                "resourcePath": "objects\\daycycle\\daycycle.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "50a93a33-7fbe-4da2-aa01-bb449d3cb864",
             "Value": {
                 "id": "dbb3982c-a179-4810-bbc7-19e7a36705a0",

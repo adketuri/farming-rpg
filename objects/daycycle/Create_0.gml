@@ -10,7 +10,8 @@ day = 1;
 season = 1;
 year = 1;
 
-time_increment = 100 * room_speed / 60;
+time_increment = 10 * room_speed / 60;
+time_multiplier = 1;
 
 max_darkness = 0.7;
 darkness = 0;

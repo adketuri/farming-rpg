@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "2daaffe6-85c8-46ed-a3ff-3ed835f2510c",
+            "Value": {
+                "id": "82b5472b-2890-4f5f-bd28-38b01f61f2f8",
+                "resourcePath": "sprites\\s_coin\\s_coin.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2f5ae38a-8395-45a4-9ce1-26ab79adb528",
             "Value": {
                 "id": "08c002c4-4f5f-4eec-8f92-376f6d5d811c",
@@ -191,6 +199,14 @@
             }
         },
         {
+            "Key": "5a86a8b7-4764-4417-a363-88c02964059c",
+            "Value": {
+                "id": "944238c1-c174-429a-a9e3-2552c76cde95",
+                "resourcePath": "objects\\inventory\\inventory.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "61d789a3-86f8-4152-91bb-d81c57a752b9",
             "Value": {
                 "id": "248087a5-0684-4878-a79a-2c01c1d8e1b1",
@@ -220,6 +236,22 @@
                 "id": "2f96c8e1-dcfe-44e2-89c5-8799b5cf350a",
                 "resourcePath": "objects\\o_player\\o_player.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "77dd24bf-58bf-4f23-9cc3-0536d9916b97",
+            "Value": {
+                "id": "97b9a9be-e0b7-4ba7-be38-807a0c1511e3",
+                "resourcePath": "sprites\\s_inventory_ui\\s_inventory_ui.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7a8059c4-7aa1-4c14-9457-03d533c91886",
+            "Value": {
+                "id": "355ac1aa-b4b4-49fd-8c22-f2ce73fa6ace",
+                "resourcePath": "sprites\\s_inventory_items\\s_inventory_items.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -332,6 +364,14 @@
                 "id": "396f080d-4f29-4bd0-8004-6e5daa64eac1",
                 "resourcePath": "scripts\\tile_collision\\tile_collision.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "af2a7aab-0177-4152-add9-db1348f3e7b1",
+            "Value": {
+                "id": "9edfcdef-5f89-48fc-8189-78d294497e30",
+                "resourcePath": "views\\af2a7aab-0177-4152-add9-db1348f3e7b1.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

@@ -3,32 +3,33 @@
 
 if (keyboard_check_pressed(ord("T"))) {	time_pause = !time_pause; }
 if (time_pause) exit;
+time_multiplier = keyboard_check(ord("F")) ? 1000 : 1;
 
-seconds += time_increment;
+seconds += time_increment * time_multiplier;
 minutes = seconds / 60;
 hours = minutes / 60;
 
 if (draw_daylight){
 	#region Phases
 	var darks, colors, phase_start, phase_end;
-	if (hours > phase.sunrise and hours < phase.daytime) {
+	if (hours > phase.sunrise and hours <= phase.daytime) {
 		darks = [max_darkness, 0.2];
 		colors = [merge_color(c_black, c_navy,0.3), c_orange];
 		phase_start = phase.sunrise;
 		phase_end = phase.daytime;
-	} else if (hours > phase.daytime and hours < phase.sunset) {
+	} else if (hours > phase.daytime and hours <= phase.sunset) {
 		darks = [0.2, 0, 0, 0, 0.2];
 		colors = [c_orange, c_orange, c_white, c_orange, c_orange];
 		phase_start = phase.daytime;
 		phase_end = phase.sunset;
-	} else if (hours > phase.sunset and hours < phase.nighttime) {
+	} else if (hours > phase.sunset and hours <= phase.nighttime) {
 		darks = [0.2, max_darkness];
 		colors = [c_orange, c_navy, merge_color(c_black, c_navy, 0.2)];
 		phase_start = phase.sunset;
 		phase_end = phase.nighttime;
 	} else {
 		darks = [max_darkness];
-		colors = [merge_color(c_black, c_navy, 0.2)];
+		colors = [merge_color(c_black, c_navy, 0.3)];
 		phase_start = phase.nighttime;
 		phase_end = phase.sunrise;
 	}

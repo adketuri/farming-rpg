@@ -11,6 +11,11 @@ inv_rows = sprite_get_height(s_inventory_items / cell_size);
 x_buffer = 4;
 y_buffer = 4;
 
+selected_slot = 0;
+pickup_item = -1;
+m_slotx = 0;
+m_sloty = 0;
+
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 

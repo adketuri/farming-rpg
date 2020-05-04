@@ -37,7 +37,16 @@ repeat (inv_slots){
 	
 	if (iitem > 0){
 		// draw slot and item
-		draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+		switch(ii){
+			case selected_slot:
+				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+				gpu_set_blendmode(bm_add);
+				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+				gpu_set_blendmode(bm_normal);
+				break;
+			default:
+				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+		}
 	
 		// draw item number
 		var number = inv_grid[# 1, ii];

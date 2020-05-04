@@ -12,7 +12,7 @@ x_buffer = 4;
 y_buffer = 4;
 
 selected_slot = 0;
-pickup_item = -1;
+pickup_slot = -1;
 m_slotx = 0;
 m_sloty = 0;
 

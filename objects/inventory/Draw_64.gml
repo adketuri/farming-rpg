@@ -44,6 +44,11 @@ repeat (inv_slots){
 				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 				gpu_set_blendmode(bm_normal);
 				break;
+				
+			case pickup_slot:
+				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 0.2);
+				break;
+				
 			default:
 				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 		}
@@ -59,4 +64,18 @@ repeat (inv_slots){
 	ii++;
 	ix = ii mod inv_width;
 	iy = ii div inv_width;
+}
+
+// draw selected item
+if (pickup_slot != -1){
+	// item
+	iitem = inv_grid[# 0, pickup_slot];
+	sx = (iitem mod inv_columns) * cell_size;
+	sy = (iitem div inv_columns) * cell_size;	
+	draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, mousex, mousey, scale, scale, c_white, 1);
+	// number
+	var inum = inv_grid[# 1, pickup_slot];
+	draw_text_color(mousex + 2 * scale, mousey + 0 * scale, string(inum), c_black, c_black, c_black, c_black, 1);
+	draw_text_color(mousex + 1 * scale, mousey - 1 * scale, string(inum), c, c, c2, c2, 1);
+				
 }

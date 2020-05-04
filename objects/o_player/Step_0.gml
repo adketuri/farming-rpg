@@ -1,12 +1,12 @@
 /// @description Move player and handle collisions
 
-if (game.transitioning) return;
+if (game.transitioning || inventory.show_inventory) return;
 
 // poll keyboard input
-input_left = keyboard_check(vk_left);
-input_right = keyboard_check(vk_right);
-input_up = keyboard_check(vk_up);
-input_down = keyboard_check(vk_down);
+input_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+input_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+input_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
+input_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
 input_walk = keyboard_check(vk_control);
 input_run = keyboard_check(vk_shift);
 

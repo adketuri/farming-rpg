@@ -27,9 +27,14 @@ inv_ui_y = (gui_height / 2) - (inv_ui_h * 0.5 * scale);
 
 info_x = inv_ui_x + 4 * scale;
 info_y = inv_ui_y + 4 * scale;
+
 money_x = inv_ui_x + (inv_ui_w - 4) * scale;
+
 slots_x = inv_ui_x + 7*scale;
 slots_y = inv_ui_y + 23*scale;
+
+desc_x = inv_ui_x + 3 * scale;
+desc_y = inv_ui_y + 88 * scale;
 
 // Player Info
 // 0 = Money
@@ -60,6 +65,30 @@ enum item {
 	corn		= 7,
 	height		= 8,
 }
+
+#region create items info grid
+ds_items_info = ds_grid_create(2, item.height);
+var z = 0, i = 0;
+ds_items_info[# z, i++] = "";
+ds_items_info[# z, i++] = "Tomato";
+ds_items_info[# z, i++] = "Potato";
+ds_items_info[# z, i++] = "Carrot";
+ds_items_info[# z, i++] = "Artichoke";
+ds_items_info[# z, i++] = "Chili";
+ds_items_info[# z, i++] = "Cucumber";
+ds_items_info[# z, i++] = "Corn";
+z++;
+i = 0;
+ds_items_info[# z, i++] = "";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+ds_items_info[# z, i++] = "Heals 10 HP";
+
+#endregion
 
 var yy = 0; repeat(inv_slots){
 	ds_inventory[# 0, yy] = irandom_range(1, item.height - 1)

@@ -69,6 +69,17 @@ repeat (inv_slots){
 	iy = ii div inv_width;
 }
 
+// draw description
+if (selected_slot >= 0){
+	var iinfo_grid = ds_items_info, description = "",
+	iitem = inv_grid[# 0, selected_slot];
+	if (iitem > 0){
+		description = iinfo_grid[# 0, iitem] + " - " + iinfo_grid[# 1, iitem]
+		draw_text_color(desc_x + 2 * scale, desc_y + 0 * scale, description, c_black, c_black, c_black, c_black, 1);
+		draw_text_color(desc_x + 1 * scale, desc_y - 1 * scale, description, c, c, c2, c2, 1);
+	}
+}
+
 // draw selected item
 if (pickup_slot != -1){
 	// item

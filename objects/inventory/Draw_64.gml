@@ -39,14 +39,16 @@ repeat (inv_slots){
 		// draw slot and item
 		switch(ii){
 			case selected_slot:
-				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-				gpu_set_blendmode(bm_add);
-				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-				gpu_set_blendmode(bm_normal);
+				if (ii != pickup_slot){
+					draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+					gpu_set_blendmode(bm_add);
+					draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+					gpu_set_blendmode(bm_normal);
+				}
 				break;
 				
 			case pickup_slot:
-				draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 0.2);
+				//draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 0.2);
 				break;
 				
 			default:
@@ -54,11 +56,12 @@ repeat (inv_slots){
 		}
 	
 		// draw item number
-		var number = inv_grid[# 1, ii];
-		draw_text_color(xx + 2 * scale, yy + 0 * scale, string(number), c_black, c_black, c_black, c_black, 1);
-		draw_text_color(xx + 1 * scale, yy - 1 * scale, string(number), c, c, c2, c2, 1);
+		if (ii != pickup_slot){
+			var number = inv_grid[# 1, ii];
+			draw_text_color(xx + 2 * scale, yy + 0 * scale, string(number), c_black, c_black, c_black, c_black, 1);
+			draw_text_color(xx + 1 * scale, yy - 1 * scale, string(number), c, c, c2, c2, 1);
+		}
 	}
-	
 	
 	// increment
 	ii++;
@@ -75,7 +78,7 @@ if (pickup_slot != -1){
 	draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, mousex, mousey, scale, scale, c_white, 1);
 	// number
 	var inum = inv_grid[# 1, pickup_slot];
-	draw_text_color(mousex + 2 * scale, mousey + 0 * scale, string(inum), c_black, c_black, c_black, c_black, 1);
-	draw_text_color(mousex + 1 * scale, mousey - 1 * scale, string(inum), c, c, c2, c2, 1);
+	draw_text_color(mousex + 4 * scale, mousey + 0 * scale, string(inum), c_black, c_black, c_black, c_black, 1);
+	draw_text_color(mousex + 3 * scale, mousey - 1 * scale, string(inum), c, c, c2, c2, 1);
 				
 }

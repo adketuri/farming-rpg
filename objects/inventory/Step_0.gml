@@ -35,7 +35,39 @@ var inv_grid = ds_inventory;
 var ss_item = inv_grid[# 0, selected_slot];
 show_debug_message(ss_item)
 
-if (ss_item != item.none && mouse_check_button_pressed(mb_right)){
+if (pickup_slot != -1 && mouse_check_button_pressed(mb_left)){
+	if (ss_item == item.none){
+		// selected a slot with nothing at all, just move the item to the new position
+		inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot];
+		inv_grid[# 1, selected_slot] = inv_grid[# 1, pickup_slot];
+		
+		inv_grid[# 0, pickup_slot] = item.none;
+		inv_grid[# 1, pickup_slot] = 0;
+		
+		pickup_slot = -1;
+	} else if (ss_item == inv_grid[# 0, pickup_slot]){
+		// combine like items
+		if (selected_slot != pickup_slot){
+			inv_grid[# 1, selected_slot] += inv_grid[# 1, pickup_slot];
+		
+			inv_grid[# 0, pickup_slot] = item.none;
+			inv_grid[# 1, pickup_slot] = 0;
+		}
+		pickup_slot = -1;
+	} else {
+		// swap it	
+		
+		var ss_item_num = inv_grid[# 1, pickup_slot]
+		
+		inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot];
+		inv_grid[# 1, selected_slot] = inv_grid[# 1, pickup_slot];
+		
+		inv_grid[# 0, pickup_slot] = ss_item;
+		inv_grid[# 1, pickup_slot] = ss_item_num;
+		
+		pickup_slot = -1;
+	}
+} else if (ss_item != item.none && mouse_check_button_pressed(mb_right)){
 	pickup_slot = selected_slot;
 	show_debug_message(pickup_slot)
 }

@@ -16,3 +16,6 @@ move_y = 0;
 
 x_offset = sprite_get_xoffset(mask_index);
 y_offset = sprite_get_yoffset(mask_index);
+
+my_path = path_add();
+facing = -1;

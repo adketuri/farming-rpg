@@ -12,6 +12,10 @@ if (facing == dir.left) {
 	x_frame = 1;	
 }
 
+if (global.movement_grid != -1) {
+	//mp_grid_draw(global.movement_grid);
+}
+
 var xx = x - x_offset;
 var yy = y - y_offset;
 draw_sprite_part(sprite_sheet, 0, floor(x_frame) * frame_w, floor(y_frame) * frame_h, frame_w, frame_h, xx, yy);

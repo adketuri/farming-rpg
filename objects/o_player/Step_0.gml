@@ -10,18 +10,68 @@ input_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
 input_walk = keyboard_check(vk_control);
 input_run = keyboard_check(vk_shift);
 
-// alter speed
-spd = SPEED
-if (input_walk xor input_run) {
-	spd = abs((input_walk*WALK_SPEED) - (input_run*RUN_SPEED));
-} 
+if (mouse_check_button_pressed(mb_left)) {
+	if (instance_exists(o_goal)){
+		instance_destroy(o_goal);
+	}
+	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
+	path_delete(my_path)
+	my_path = path_add();
+	//mp_grid_clear_all(global.movement_grid);
+	global.movement_grid = mp_grid_create(0, 0, room_width div game.cell_size, room_height div game.cell_size, game.cell_size, game.cell_size)
+	var xx = 0; repeat(room_width div game.cell_size){
+		var yy = 0; repeat(room_height div game.cell_size){
+			var lay_id = layer_get_id("Collisions");
+			var map_id = layer_tilemap_get_id(lay_id);
+			var tile = tilemap_get_at_pixel(map_id, xx * game.cell_size, yy * game.cell_size);
+			if (tile > 0){
+				mp_grid_add_cell(global.movement_grid, xx, yy);
+			}
+			yy++;
+		}
+		xx++;
+	}
+	mp_grid_path(global.movement_grid, my_path, x, y, o_goal.x, o_goal.y, true);
+	path_start(my_path, 2, path_action_stop, true);
+}
+if (path_position >= 1 and instance_exists (o_goal)){
+	instance_destroy(o_goal);	
+}
+
+
+//// alter speed
+//spd = SPEED
+//if (input_walk xor input_run) {
+//	spd = abs((input_walk*WALK_SPEED) - (input_run*RUN_SPEED));
+//} 
 
 // set intended movement
-move_x = 0
-move_y = 0
-move_x = (input_right - input_left) * spd / room_speed;
-if (move_x == 0) {
-	move_y = (input_down - input_up) * spd / room_speed;
+//move_x = 0
+//move_y = 0
+//move_x = (input_right - input_left) * spd / room_speed;
+//if (move_x == 0) {
+//	move_y = (input_down - input_up) * spd / room_speed;
+//}
+move_x = 0;
+move_y = 0;
+show_debug_message(facing);
+if (instance_exists (o_goal) && path_position < 1){
+	if (direction >= 306 or direction <= 45) {
+		move_x = 1;
+		facing = dir.right;
+	} else if (direction >= 136 and direction <= 225) {
+		move_x = -1;
+		facing = dir.left;
+	}
+	if (move_x == 0){
+		if (direction >= 46 and direction <= 135) {
+			move_y = -1;
+			facing = dir.up;
+		} else if (direction >= 226 and direction <= 305) {
+			move_y = 1;
+			facing = dir.down;
+		} 
+	}
 }
 
 

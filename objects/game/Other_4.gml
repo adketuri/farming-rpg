@@ -2,6 +2,8 @@
 // You can write your code in this editor
 room_w = room_width;
 room_h = room_height;
+cell_size = 16;
+global.movement_grid = -1;
 
 if (spawn_room == -1) exit;
 

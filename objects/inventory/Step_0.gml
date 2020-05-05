@@ -2,7 +2,10 @@
 
 if (keyboard_check_pressed(vk_escape)) show_inventory = !show_inventory;
 
-if (!show_inventory) exit;
+if (!show_inventory) {
+	pickup_slot = -1;
+	exit;
+}
 
 // Get selected slot
 #region get selected_slot
@@ -40,7 +43,6 @@ if (selected_slot >= 0) {
 if (pickup_slot != -1 && mouse_check_button_pressed(mb_left)) {
 	if (ss_item == -1) {
 		// No item at this slot, drop the item 
-		show_debug_message(pickup_slot);
 		inv_grid[# 1, pickup_slot] -= 1;
 		
 		// Create the item in the game world

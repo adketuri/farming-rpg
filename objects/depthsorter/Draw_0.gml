@@ -22,7 +22,9 @@ yy = 0;
 repeat(instance_num){
 	// get current id
 	inst = dgrid[# 0, yy];
+
 	with (inst) {
+		show_debug_message(object_get_name(object_index));
 		event_perform(ev_draw, 0);	
 	}
 	yy++;

@@ -19,3 +19,5 @@ y_offset = sprite_get_yoffset(mask_index);
 
 my_path = path_add();
 facing = -1;
+
+last_dir = 0;

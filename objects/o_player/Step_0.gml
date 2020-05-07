@@ -26,6 +26,9 @@ if (mouse_check_button_pressed(mb_left)) {
 	}
 	mp_grid_path(global.movement_grid, my_path, x, y, o_goal.x, o_goal.y, true);
 	path_start(my_path, 100 / room_speed, path_action_stop, true);
+	last_x = -1;
+	last_y = -1;
+	last_dir = -1000;
 }
 if (path_position >= 1 and instance_exists (o_goal)){
 	instance_destroy(o_goal);	
@@ -59,7 +62,15 @@ if (instance_exists (o_goal) && path_position < 1){
 		}		
 		move_x = 1;
 	} 
+} 
+
+if (last_x == x && last_y == y){
+	facing = -1;
+} else {
+	last_x = x;
+	last_y = y;
 }
+
 
 // check for a collision with tiles
 collision_layer = layer_tilemap_get_id("Collisions")

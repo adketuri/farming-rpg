@@ -21,3 +21,6 @@ my_path = path_add();
 facing = -1;
 
 last_dir = 0;
+
+last_x = 0;
+last_y = 0;

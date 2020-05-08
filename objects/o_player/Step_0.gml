@@ -2,7 +2,6 @@
 
 if (game.transitioning || inventory.show_inventory) return;
 
-
 if (mouse_check_button_pressed(mb_left)) {
 	if (instance_exists(o_goal)){
 		instance_destroy(o_goal);
@@ -16,7 +15,7 @@ if (mouse_check_button_pressed(mb_left)) {
 	last_y = -1;
 	last_dir = -1000;
 }
-if (path_position >= 1 and instance_exists(o_goal)){
+if ((path_position >= 1 && instance_exists(o_goal))){
 	instance_destroy(o_goal);	
 }
 

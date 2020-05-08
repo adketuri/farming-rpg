@@ -1,5 +1,5 @@
 depth = -1;
-scale = 4;
+scale = 1;
 cell_size = 16;
 show_inventory = false;
 

@@ -26,3 +26,4 @@ last_x = 0;
 last_y = 0;
 
 movement_grid = -1;
+mouse_target = -1;

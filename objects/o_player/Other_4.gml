@@ -10,7 +10,6 @@ var xx = 0; repeat(room_width div game.cell_size){
 		var tile = tilemap_get_at_pixel(map_id, xx * game.cell_size, yy * game.cell_size);
 		if (tile > 0){
 			mp_grid_add_cell(movement_grid, xx, yy);
-			show_debug_message("Creating cell " + string(xx))
 		}
 		yy++;
 	}

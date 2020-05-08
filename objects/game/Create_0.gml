@@ -20,5 +20,5 @@ enum dir {
 	down = 270,
 }
 
-window_set_cursor(cr_none);
-cursor_sprite = s_cursor;
+//window_set_cursor(cr_none);
+//cursor_sprite = s_cursor;

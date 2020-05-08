@@ -26,4 +26,7 @@ last_x = 0;
 last_y = 0;
 
 movement_grid = -1;
-mouse_target = -1;
+// currently overlapped enemy
+overlapping = -1;
+// currently targeted (clicked) enemy
+target = -1;

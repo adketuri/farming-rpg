@@ -14,6 +14,11 @@ if (mouse_check_button_pressed(mb_left)) {
 	last_x = -1;
 	last_y = -1;
 	last_dir = -1000;
+	if (overlapping){
+		target = overlapping;	
+	} else {
+		target = -1;
+	}
 }
 if ((path_position >= 1 && instance_exists(o_goal))){
 	instance_destroy(o_goal);	

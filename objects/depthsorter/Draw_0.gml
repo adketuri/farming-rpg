@@ -24,7 +24,7 @@ repeat(instance_num){
 	inst = dgrid[# 0, yy];
 
 	with (inst) {
-		show_debug_message(object_get_name(object_index));
+		//show_debug_message(object_get_name(object_index));
 		event_perform(ev_draw, 0);	
 	}
 	yy++;

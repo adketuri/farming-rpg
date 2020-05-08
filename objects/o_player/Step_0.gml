@@ -8,23 +8,9 @@ if (mouse_check_button_pressed(mb_left)) {
 		instance_destroy(o_goal);
 	}
 	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
-	path_delete(my_path)
+	path_delete(my_path);
 	my_path = path_add();
-	mp_grid_clear_all(global.movement_grid);
-	global.movement_grid = mp_grid_create(0, 0, room_width div game.cell_size, room_height div game.cell_size, game.cell_size, game.cell_size)
-	var xx = 0; repeat(room_width div game.cell_size){
-		var yy = 0; repeat(room_height div game.cell_size){
-			var lay_id = layer_get_id("Collisions");
-			var map_id = layer_tilemap_get_id(lay_id);
-			var tile = tilemap_get_at_pixel(map_id, xx * game.cell_size, yy * game.cell_size);
-			if (tile > 0){
-				mp_grid_add_cell(global.movement_grid, xx, yy);
-			}
-			yy++;
-		}
-		xx++;
-	}
-	mp_grid_path(global.movement_grid, my_path, x, y, o_goal.x, o_goal.y, true);
+	mp_grid_path(movement_grid, my_path, x, y, o_goal.x, o_goal.y, true);
 	path_start(my_path, 100 / room_speed, path_action_stop, true);
 	last_x = -1;
 	last_y = -1;

@@ -12,8 +12,13 @@ if (facing == dir.left) {
 	x_frame = 1;	
 }
 
-if (global.movement_grid != -1) {
-	//mp_grid_draw(global.movement_grid);
+if (game.debug){
+	if (movement_grid != -1) {
+		mp_grid_draw(movement_grid);
+	}
+	if (my_path != -1){
+		draw_path(my_path, x, y, true);	
+	}
 }
 
 var xx = x - x_offset;

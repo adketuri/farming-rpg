@@ -7,13 +7,7 @@ if (mouse_check_button_pressed(mb_left)) {
 		instance_destroy(o_goal);
 	}
 	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
-	path_delete(my_path);
-	my_path = path_add();
-	mp_grid_path(movement_grid, my_path, x, y, o_goal.x, o_goal.y, true);
-	path_start(my_path, 100 / room_speed, path_action_stop, true);
-	last_x = -1;
-	last_y = -1;
-	last_dir = -1000;
+	begin_movement()
 	if (overlapping){
 		target = overlapping;	
 	} else {
@@ -122,4 +116,17 @@ if (inst != noone && facing == inst.player_facing_before){
 		spawn_player_facing = inst.player_facing_after;
 		transitioning = true;
 	}
+}
+
+// Check if we can switch to combat mode
+if (!combat && target != -1 && distance_to_object(target) < 10){
+	// Remove path, begin attacking
+	if (instance_exists(o_goal)){
+		instance_destroy(o_goal);
+	}
+	path_delete(my_path);
+	combat = true;
+} else if (combat && target == -1 || distance_to_object(target) > 10){
+	// Remove combat mode, move towards target again	
+	combat = false;
 }

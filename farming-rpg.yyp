@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "1f283ca1-621d-4126-8093-acf2b4656abd",
+            "Value": {
+                "id": "351a6690-9974-4e01-88b5-e3026bf63c25",
+                "resourcePath": "scripts\\begin_movement\\begin_movement.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1fb36800-550e-44d1-8f0c-bb36f5a9735b",
             "Value": {
                 "id": "aa7505d6-542f-4dc2-ae4b-be55376e367b",
@@ -300,6 +308,14 @@
                 "id": "2f96c8e1-dcfe-44e2-89c5-8799b5cf350a",
                 "resourcePath": "objects\\o_player\\o_player.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "720f0c56-2b1e-4dd7-a83f-8842bca3b78e",
+            "Value": {
+                "id": "99ac0faa-1698-4d82-9763-4804d5268573",
+                "resourcePath": "sprites\\s_player_collision_combat\\s_player_collision_combat.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -527,6 +543,14 @@
             }
         },
         {
+            "Key": "d3fc1138-47f0-463d-99d5-dc73f8661ea2",
+            "Value": {
+                "id": "ccb9c1d6-c6be-4e25-9d3d-291623295f8a",
+                "resourcePath": "sprites\\s_player_combat\\s_player_combat.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d412f324-dda5-43d2-9062-0fbe6fccab58",
             "Value": {
                 "id": "cb58287b-2587-48b1-b7a8-70bf20de301f",
@@ -637,7 +661,8 @@
         "c05328e2-6a42-4bc3-b414-297b8aa5d245",
         "2f5ae38a-8395-45a4-9ce1-26ab79adb528",
         "de134e95-3299-483f-9784-852b7825037c",
-        "b48152c1-d9de-4b89-a27a-940e8c59ccee"
+        "b48152c1-d9de-4b89-a27a-940e8c59ccee",
+        "1f283ca1-621d-4126-8093-acf2b4656abd"
     ],
     "tutorial": ""
 }

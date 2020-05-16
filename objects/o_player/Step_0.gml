@@ -18,6 +18,7 @@ if ((path_position >= 1 && instance_exists(o_goal))){
 	instance_destroy(o_goal);	
 }
 
+#region facing and directions
 move_x = 0;
 move_y = 0;
 if (instance_exists (o_goal) && path_position < 1){
@@ -54,8 +55,9 @@ if (last_x == x && last_y == y){
 	last_x = x;
 	last_y = y;
 }
+#endregion
 
-
+#region collision and movement
 // check for a collision with tiles
 collision_layer = layer_tilemap_get_id("Collisions")
 if (move_x != 0 && tile_collision(x + move_x, y, collision_layer)){
@@ -117,16 +119,45 @@ if (inst != noone && facing == inst.player_facing_before){
 		transitioning = true;
 	}
 }
+#endregion
 
-// Check if we can switch to combat mode
+#region combat
+// Check if we can switch in/out of combat mode
 if (!combat && target != -1 && distance_to_object(target) < 10){
 	// Remove path, begin attacking
 	if (instance_exists(o_goal)){
 		instance_destroy(o_goal);
 	}
-	path_delete(my_path);
+	if (path_exists(my_path)){
+		path_delete(my_path);
+	}
+	if (abs(target.x - x) < abs(target.y - y)){
+		// face up or down	
+		if (target.y > y){
+			combat_facing = dir.down;	
+		} else {
+			combat_facing = dir.up;
+		}
+	} else {
+		// face left or right
+		if (target.x > x){
+			combat_facing = dir.right;	
+		} else {
+			combat_facing = dir.left;
+		}
+	}
 	combat = true;
 } else if (combat && target == -1 || distance_to_object(target) > 10){
 	// Remove combat mode, move towards target again	
 	combat = false;
 }
+
+if (combat && !attacking) {
+	attack_timer += delta_time / 1000000;
+	if (attack_timer >= time_to_attack){
+		attacking = true;
+		x_frame = 0;
+		attack_timer = 0;
+	}
+}
+#endregion

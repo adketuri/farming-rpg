@@ -25,12 +25,14 @@ y_offset_combat = sprite_get_yoffset(s_player_collision_combat);
 
 my_path = path_add();
 facing = -1;
+combat_facing = -1;
 
 last_dir = 0;
 
 last_x = 0;
 last_y = 0;
 
+// Combat
 movement_grid = -1;
 // currently overlapped enemy
 overlapping = -1;
@@ -38,3 +40,6 @@ overlapping = -1;
 target = -1;
 // whether or not we're in combat mode
 combat = false;
+attack_timer = 0;
+time_to_attack = 3;
+attacking = false;

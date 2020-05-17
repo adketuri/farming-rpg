@@ -1,4 +1,6 @@
 /// @description Update monster 
+exit; //FIXME
+
 if (state != mon_state.dead){
 	frame = (frame + 5 / room_speed) % total_frames;
 } else {
@@ -12,24 +14,24 @@ switch (state){
 		if (state_time > 0.5 && distance_to_object(target) > 5){
 			begin_movement(target.x, target.y, 50);
 			state_time = 0;
-			state = change_monster_state(state, mon_state.following);
+			state = change_state(state, mon_state.following);
 		}
 		if (distance_to_object(target) < 5){
 			if (path_exists(my_path)){
 				path_delete(my_path);
 			}
-			state = change_monster_state(state, mon_state.combat);
+			state = change_state(state, mon_state.combat);
 		}
 		break;
 	case mon_state.combat:
 		if (hp < 0){
 			frame = 0;
-			state = change_monster_state(state, mon_state.dead);
+			state = change_state(state, mon_state.dead);
 			show_debug_message("DEAD");
 		} else if (distance_to_object(target) > 5){
-			state = change_monster_state(state, mon_state.idle);
+			state = change_state(state, mon_state.idle);
 		} else if (state_time > time_to_attack){
-			state = change_monster_state(state, mon_state.attacking);	
+			state = change_state(state, mon_state.attacking);	
 		}
 		break;
 	case mon_state.attacking:
@@ -40,7 +42,7 @@ switch (state){
 				hp -= attack;	
 			}
 			start_damage(target.x, target.y, attack);
-			state = change_monster_state(state, mon_state.returning);
+			state = change_state(state, mon_state.returning);
 		}
 		break;
 	case mon_state.returning:
@@ -49,7 +51,7 @@ switch (state){
 		if (state_time > attack_anim_time){
 			attack_offset_x = 0;
 			attack_offset_y = 0;
-			state = change_monster_state(state, mon_state.combat);
+			state = change_state(state, mon_state.combat);
 		}
 		break;
 	case mon_state.dead:

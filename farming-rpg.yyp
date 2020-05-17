@@ -226,7 +226,7 @@
             "Key": "35434c66-30ae-418b-9f3b-7f8576caaea9",
             "Value": {
                 "id": "6e48326d-5a15-449c-a925-21399c1adb9b",
-                "resourcePath": "scripts\\change_monster_state\\change_monster_state.yy",
+                "resourcePath": "scripts\\change_state\\change_state.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -436,6 +436,14 @@
                 "id": "33188789-ad1c-4102-8633-282759d25cd5",
                 "resourcePath": "sprites\\s_terrain\\s_terrain.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9c526df0-e566-41c6-8629-eec691c48da3",
+            "Value": {
+                "id": "8737c244-772c-46aa-8cdd-af87afea1b81",
+                "resourcePath": "scripts\\player_check_mouse_click\\player_check_mouse_click.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -737,7 +745,8 @@
         "1f283ca1-621d-4126-8093-acf2b4656abd",
         "cea9122f-f4f3-474f-a57d-7d28f7cc259a",
         "0293f15e-c24d-4c21-a5b9-d836462c0f08",
-        "35434c66-30ae-418b-9f3b-7f8576caaea9"
+        "35434c66-30ae-418b-9f3b-7f8576caaea9",
+        "9c526df0-e566-41c6-8629-eec691c48da3"
     ],
     "tutorial": ""
 }

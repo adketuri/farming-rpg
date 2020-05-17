@@ -2,8 +2,8 @@
 event_inherited();
 
 anim_length = 4;
-anim_length_combat = 3;
 anim_speed = 9;
+
 sprite_sheet = s_player
 sprite_sheet_combat = s_player_combat
 
@@ -24,23 +24,29 @@ x_offset_combat = sprite_get_xoffset(s_player_collision_combat);
 y_offset_combat = sprite_get_yoffset(s_player_collision_combat);
 
 my_path = path_add();
-facing = -1;
-combat_facing = -1;
+facing = dir.down;
 
-last_dir = 0;
-
+last_dir = 100000;
 last_x = 0;
 last_y = 0;
+
+enum player_state {
+	idle,
+	moving,
+	combat,
+	attacking,
+	mining,
+	farming
+}
 
 // Combat
 movement_grid = -1;
 overlapping = -1; // currently overlapped enemy
 target = -1; // currently targeted (clicked) enemy
-combat = false; // whether or not we're in combat mode
-attack_timer = 0;
-time_to_attack = 1;
-attacking = false;
+state = player_state.idle;
+state_time = 0;
 
 // stats
 attack = 10;
 hp = 100;
+time_to_attack = 2;

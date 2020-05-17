@@ -29,5 +29,5 @@ attack_offset_x = 0;
 attack_offset_y = 0;
 
 // Stats
-hp = 3;
+hp = 30;
 attack = 5;

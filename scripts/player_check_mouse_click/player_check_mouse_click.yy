@@ -1,8 +1,8 @@
 {
-    "id": "35434c66-30ae-418b-9f3b-7f8576caaea9",
+    "id": "9c526df0-e566-41c6-8629-eec691c48da3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "change_monster_state",
+    "name": "player_check_mouse_click",
     "IsCompatibility": false,
     "IsDnD": false
 }

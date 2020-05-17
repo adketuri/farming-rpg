@@ -2,23 +2,76 @@
 
 if (game.transitioning || inventory.show_inventory) return;
 
-if (mouse_check_button_pressed(mb_left)) {
-	if (instance_exists(o_goal)){
-		instance_destroy(o_goal);
-	}
-	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
-	begin_movement(o_goal.x, o_goal.y, 100)
-	if (overlapping){
-		target = overlapping;	
-	} else {
-		target = -1;
-	}
+#region state management
+switch (state) {
+	case player_state.idle:
+	case player_state.moving:
+		player_check_mouse_click();
+		// Check if we can switch in/out of combat mode
+		if (target != -1 && distance_to_object(target) < 5 && target.hp > 0){
+			// Remove path, begin attacking
+			if (instance_exists(o_goal)){
+				instance_destroy(o_goal);
+			}
+			if (path_exists(my_path)){
+				path_delete(my_path);
+			}
+			if (abs(target.x - x) < abs(target.y - y)){
+				// face up or down	
+				if (target.y > y){
+					facing = dir.down;	
+				} else {
+					facing = dir.up;
+				}
+			} else {
+				// face left or right
+				if (target.x > x){
+					facing = dir.right;	
+				} else {
+					facing = dir.left;
+				}
+			}
+			state = change_state(state, player_state.combat);
+		} 
+		break;
+	case player_state.combat:
+		player_check_mouse_click();	
+		if (target == -1 || distance_to_object(target) > 5 || target.hp <= 0){
+			state = change_state(state, player_state.idle);
+			target = -1;
+		} else if (state_time >= time_to_attack){
+			x_frame = 0;
+			state = change_state(state, player_state.attacking);
+		}
+		break;
+	case player_state.attacking:
+		if (x_frame >= anim_length) {
+			start_damage(target.x, target.y, attack)
+			with (target){
+				hp -= attack;
+				if (hp <= 0){
+					with (o_player){
+						target = -1;
+						facing = facing;
+						state = change_state(state, player_state.idle);
+					}
+				}
+			}
+			state = change_state(state, player_state.combat);
+		}
+		break;
+	default:
+		break;
 }
-if ((path_position >= 1 && instance_exists(o_goal))){
+state_time += delta_time / 1000000;
+#endregion
+
+if (path_position >= 1 && instance_exists(o_goal)){
 	instance_destroy(o_goal);	
 }
 
 #region facing and directions
+
 move_x = 0;
 move_y = 0;
 if (instance_exists (o_goal) && path_position < 1){
@@ -49,12 +102,57 @@ if (instance_exists (o_goal) && path_position < 1){
 	} 
 } 
 
-if (last_x == x && last_y == y){
-	facing = -1;
+var combat = state == player_state.combat || state == player_state.attacking;
+// Update x frame
+if (!combat && last_x == x && last_y == y){
+	x_frame = 1;
 } else {
 	last_x = x;
 	last_y = y;
 }
+x_frame += anim_speed / room_speed;
+if (state != player_state.attacking){
+	x_frame = x_frame mod anim_length;
+}
+show_debug_message(x_frame);
+
+// Update y frame
+if (!combat) {
+	if (facing == dir.left) {
+		y_frame = 2; 	
+	} else if (facing == dir.right) {
+		y_frame = 1;	
+	} else if (facing == dir.up) {
+		y_frame = 3; 	
+	} else if (facing == dir.down) {
+		y_frame = 0;	
+	}
+	anim_length = 4;
+} else {
+	if (state == player_state.attacking){
+		if (facing == dir.left) {
+			y_frame = 9; 	
+		} else if (facing == dir.right) {
+			y_frame = 2;	
+		} else if (facing == dir.up) {
+			y_frame = 5; 	
+		} else if (facing == dir.down) {
+			y_frame = 8;	
+		} 		
+	} else {
+		if (facing == dir.left) {
+			y_frame = 1; 	
+		} else if (facing == dir.right) {
+			y_frame = 0;	
+		} else if (facing == dir.up) {
+			y_frame = 4; 	
+		} else if (facing == dir.down) {
+			y_frame = 7;	
+		} 
+	}
+	anim_length = 3;
+}
+
 #endregion
 
 #region collision and movement
@@ -117,47 +215,6 @@ if (inst != noone && facing == inst.player_facing_before){
 		spawn_y = inst.target_y;
 		spawn_player_facing = inst.player_facing_after;
 		transitioning = true;
-	}
-}
-#endregion
-
-#region combat
-// Check if we can switch in/out of combat mode
-if (!combat && target != -1 && distance_to_object(target) < 5){
-	// Remove path, begin attacking
-	if (instance_exists(o_goal)){
-		instance_destroy(o_goal);
-	}
-	if (path_exists(my_path)){
-		path_delete(my_path);
-	}
-	if (abs(target.x - x) < abs(target.y - y)){
-		// face up or down	
-		if (target.y > y){
-			combat_facing = dir.down;	
-		} else {
-			combat_facing = dir.up;
-		}
-	} else {
-		// face left or right
-		if (target.x > x){
-			combat_facing = dir.right;	
-		} else {
-			combat_facing = dir.left;
-		}
-	}
-	combat = true;
-} else if (combat && target == -1 || distance_to_object(target) > 5){
-	// Remove combat mode, move towards target again	
-	combat = false;
-}
-
-if (combat && !attacking) {
-	attack_timer += delta_time / 1000000;
-	if (attack_timer >= time_to_attack){
-		attacking = true;
-		x_frame = 0;
-		attack_timer = 0;
 	}
 }
 #endregion

@@ -9,11 +9,24 @@ frame = id % 4;
 movement_grid = -1;
 my_path = path_add();
 path_update_time = 0;
-
-
-// combat values
-combat = false;
-attack_timer = 0;
 time_to_attack = 2;
-attacking = false;
+attack_anim_time = 0.15;
+
+
+// states
+enum mon_state {
+	idle,
+	following,
+	combat,
+	attacking,
+	returning,
+	dead,
+}
+state = mon_state.idle;
+state_time = 0;
+attack_offset_x = 0;
+attack_offset_y = 0;
+
+// Stats
+hp = 30;
 attack = 5;

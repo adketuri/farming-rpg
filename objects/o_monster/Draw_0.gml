@@ -1,1 +1,1 @@
-draw_sprite(sprite, floor(frame), x, y);
+draw_sprite(sprite, floor(frame), x + attack_offset_x, y + attack_offset_y);

@@ -34,15 +34,13 @@ last_y = 0;
 
 // Combat
 movement_grid = -1;
-// currently overlapped enemy
-overlapping = -1;
-// currently targeted (clicked) enemy
-target = -1;
-// whether or not we're in combat mode
-combat = false;
+overlapping = -1; // currently overlapped enemy
+target = -1; // currently targeted (clicked) enemy
+combat = false; // whether or not we're in combat mode
 attack_timer = 0;
 time_to_attack = 1;
 attacking = false;
 
-// how much damage an attack will do
+// stats
 attack = 10;
+hp = 100;

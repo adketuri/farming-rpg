@@ -67,6 +67,9 @@ if (x_frame >= anim_length) {
 	if (attacking) {
 		attacking = false;
 		start_damage(target.x, target.y, attack)
+		with (target){
+			hp -= attack;	
+		}
 	} else {
 		x_frame = 0;
 	}

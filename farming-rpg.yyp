@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "1147fd8f-e24b-484b-82df-c5e59a088d6f",
+            "Value": {
+                "id": "8811ce17-c796-4ba7-83f0-046f96e5933c",
+                "resourcePath": "sprites\\s_slime_death_strip5\\s_slime_death_strip5.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1b7a12db-34fa-426f-a875-7fb83dae71c6",
             "Value": {
                 "id": "8de991d6-3531-492d-9d40-110039c0d168",

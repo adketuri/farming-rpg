@@ -2,7 +2,7 @@
 
 var overlap = -1;
 with(o_monster){
-	if (position_meeting(mouse_x, mouse_y, id))
+	if (position_meeting(mouse_x, mouse_y, id) && hp > 0)
     {
         overlap = id;
 		break;

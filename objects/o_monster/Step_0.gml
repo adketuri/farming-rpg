@@ -1,5 +1,9 @@
 /// @description Update monster 
-frame = (frame + 5 / room_speed) % total_frames;
+if (state != mon_state.dead){
+	frame = (frame + 5 / room_speed) % total_frames;
+} else {
+	frame = (frame + 10 / room_speed);
+}
 state_time += delta_time / 1000000;
 var target = o_player;
 switch (state){
@@ -18,7 +22,11 @@ switch (state){
 		}
 		break;
 	case mon_state.combat:
-		if (distance_to_object(target) > 5){
+		if (hp < 0){
+			frame = 0;
+			state = change_monster_state(state, mon_state.dead);
+			show_debug_message("DEAD");
+		} else if (distance_to_object(target) > 5){
 			state = change_monster_state(state, mon_state.idle);
 		} else if (state_time > time_to_attack){
 			state = change_monster_state(state, mon_state.attacking);	
@@ -45,7 +53,7 @@ switch (state){
 		}
 		break;
 	case mon_state.dead:
-		if (state_time > 10){
+		if (state_time > 100){
 			instance_destroy();
 		}
 		break;

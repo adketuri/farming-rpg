@@ -68,7 +68,13 @@ if (x_frame >= anim_length) {
 		attacking = false;
 		start_damage(target.x, target.y, attack)
 		with (target){
-			hp -= attack;	
+			hp -= attack;
+			if (hp <= 0){
+				with (o_player){
+					target = -1;
+					facing = combat_facing;
+				}
+			}
 		}
 	} else {
 		x_frame = 0;

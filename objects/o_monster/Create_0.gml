@@ -2,8 +2,9 @@
 event_inherited();
 collideable = true;
 sprite = -1;
+dead_sprite = -1;
 total_frames = 4;
-frame = id % 4;
+frame = (id * 2) % 4;
 
 // pathing
 movement_grid = -1;
@@ -28,5 +29,5 @@ attack_offset_x = 0;
 attack_offset_y = 0;
 
 // Stats
-hp = 30;
+hp = 3;
 attack = 5;

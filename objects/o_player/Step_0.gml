@@ -7,7 +7,7 @@ if (mouse_check_button_pressed(mb_left)) {
 		instance_destroy(o_goal);
 	}
 	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
-	begin_movement()
+	begin_movement(o_goal.x, o_goal.y, 100)
 	if (overlapping){
 		target = overlapping;	
 	} else {

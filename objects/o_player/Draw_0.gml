@@ -42,7 +42,7 @@ if (game.debug){
 	if (movement_grid != -1) {
 		mp_grid_draw(movement_grid);
 	}
-	if (my_path != -1){
+	if (my_path != -1 && path_exists(my_path)){
 		draw_path(my_path, x, y, true);	
 	}
 }

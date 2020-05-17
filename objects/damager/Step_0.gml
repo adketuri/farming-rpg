@@ -5,8 +5,8 @@ var dgrid = ds_damages;
 
 if (pending_val >= 0){
 	dgrid[# dmg_grid.duration, 0] = 3
-	dgrid[# dmg_grid.x, 0] = pending_x;
-	dgrid[# dmg_grid.y, 0] = pending_y;
+	dgrid[# dmg_grid.x, 0] = pending_x + random_range(-5, 5);
+	dgrid[# dmg_grid.y, 0] = pending_y + random_range(-5, 5);;
 	dgrid[# dmg_grid.value, 0] = pending_val;
 	pending_val = -1;
 }

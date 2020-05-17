@@ -123,7 +123,7 @@ if (inst != noone && facing == inst.player_facing_before){
 
 #region combat
 // Check if we can switch in/out of combat mode
-if (!combat && target != -1 && distance_to_object(target) < 10){
+if (!combat && target != -1 && distance_to_object(target) < 5){
 	// Remove path, begin attacking
 	if (instance_exists(o_goal)){
 		instance_destroy(o_goal);
@@ -147,7 +147,7 @@ if (!combat && target != -1 && distance_to_object(target) < 10){
 		}
 	}
 	combat = true;
-} else if (combat && target == -1 || distance_to_object(target) > 10){
+} else if (combat && target == -1 || distance_to_object(target) > 5){
 	// Remove combat mode, move towards target again	
 	combat = false;
 }

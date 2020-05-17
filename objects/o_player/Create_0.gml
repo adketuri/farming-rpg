@@ -41,5 +41,8 @@ target = -1;
 // whether or not we're in combat mode
 combat = false;
 attack_timer = 0;
-time_to_attack = 3;
+time_to_attack = 1;
 attacking = false;
+
+// how much damage an attack will do
+attack = 10;

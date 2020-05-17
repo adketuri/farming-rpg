@@ -15,7 +15,6 @@ if (!combat) {
 	anim_length = 4;
 } else {
 	if (attacking){
-		show_debug_message(combat_facing);
 		if (combat_facing == dir.left) {
 			y_frame = 9; 	
 		} else if (combat_facing == dir.right) {
@@ -48,7 +47,6 @@ if (game.debug){
 	}
 }
 
-
 if (combat){
 	var xx = x - x_offset_combat; 
 	var yy = y - y_offset_combat;
@@ -67,11 +65,11 @@ if (x_frame <= anim_length ) {
 } 
 if (x_frame >= anim_length) {
 	if (attacking) {
-		attacking = false;	
+		attacking = false;
+		start_damage(target.x, target.y, attack)
 	} else {
 		x_frame = 0;
 	}
 }
-
 
 if (game.debug) draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_yellow, c_yellow, c_yellow, c_yellow, true);

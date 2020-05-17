@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "0293f15e-c24d-4c21-a5b9-d836462c0f08",
+            "Value": {
+                "id": "c9d1d8a0-1027-460d-afdd-0d738fc3f79b",
+                "resourcePath": "scripts\\ease_out\\ease_out.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "02d214e6-3f78-448b-9a7e-3df2098880f5",
             "Value": {
                 "id": "b0327952-ccf5-4554-b631-2f8052984001",
@@ -267,6 +275,14 @@
             "Value": {
                 "id": "944238c1-c174-429a-a9e3-2552c76cde95",
                 "resourcePath": "objects\\inventory\\inventory.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5f4600ab-359d-45e8-8c95-dea21875e31e",
+            "Value": {
+                "id": "a84c1a06-e169-4854-9ad5-d11d56040d8b",
+                "resourcePath": "objects\\damager\\damager.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -535,6 +551,14 @@
             }
         },
         {
+            "Key": "cea9122f-f4f3-474f-a57d-7d28f7cc259a",
+            "Value": {
+                "id": "742bbc48-331f-41f9-8c51-1a5821584d66",
+                "resourcePath": "scripts\\start_damage\\start_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cffe1e40-8d28-43c4-b94b-8a738cfeabdf",
             "Value": {
                 "id": "1f21b0a4-f778-490c-bb67-fe15a36f5119",
@@ -662,7 +686,9 @@
         "2f5ae38a-8395-45a4-9ce1-26ab79adb528",
         "de134e95-3299-483f-9784-852b7825037c",
         "b48152c1-d9de-4b89-a27a-940e8c59ccee",
-        "1f283ca1-621d-4126-8093-acf2b4656abd"
+        "1f283ca1-621d-4126-8093-acf2b4656abd",
+        "cea9122f-f4f3-474f-a57d-7d28f7cc259a",
+        "0293f15e-c24d-4c21-a5b9-d836462c0f08"
     ],
     "tutorial": ""
 }

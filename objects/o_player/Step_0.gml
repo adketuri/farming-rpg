@@ -48,7 +48,7 @@ switch (state) {
 		if (x_frame >= anim_length) {
 			start_damage(target.x, target.y, attack)
 			with (target){
-				hp -= attack;
+				hp -= o_player.attack;
 				if (hp <= 0){
 					with (o_player){
 						target = -1;
@@ -114,7 +114,6 @@ x_frame += anim_speed / room_speed;
 if (state != player_state.attacking){
 	x_frame = x_frame mod anim_length;
 }
-show_debug_message(x_frame);
 
 // Update y frame
 if (!combat) {
@@ -217,4 +216,9 @@ if (inst != noone && facing == inst.player_facing_before){
 		transitioning = true;
 	}
 }
+#endregion
+
+#region hunger meter
+satiety -= delta_time / 1000000
+
 #endregion

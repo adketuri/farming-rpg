@@ -48,5 +48,8 @@ state_time = 0;
 
 // stats
 attack = 10;
-hp = 100;
+max_hp = 100;
+hp = max_hp;
 time_to_attack = 2;
+max_satiety = 1000;
+satiety = max_satiety;

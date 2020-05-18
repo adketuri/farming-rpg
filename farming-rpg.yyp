@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "2fdb3c3d-7c47-4ce0-9317-04aec5838b8d",
+            "Value": {
+                "id": "1ae88e68-c4ac-4c5f-b3e6-44cf0e1378ce",
+                "resourcePath": "objects\\gauges\\gauges.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "30a7169a-ef3e-4082-815b-31e3bcb3dce4",
             "Value": {
                 "id": "a88e35cc-c0c4-4e40-b112-62daf52b11bb",
@@ -267,6 +275,14 @@
             "Value": {
                 "id": "21130a94-cd19-4519-baf4-a44a374c6eae",
                 "resourcePath": "views\\49c87bfb-95df-435c-bcfb-20a8a88257bc.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4b113d78-cba1-446c-932c-3f8d35ff24c5",
+            "Value": {
+                "id": "eeac13ae-cf1b-41a6-9f53-c031477928d7",
+                "resourcePath": "views\\4b113d78-cba1-446c-932c-3f8d35ff24c5.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -428,6 +444,14 @@
                 "id": "403c4044-5d6c-47fe-ada6-7853bc03868b",
                 "resourcePath": "views\\8a1872a8-603c-4800-a2e8-481f6b1f924a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "979f6d5e-2b33-40fb-a8e1-374adfd0fb16",
+            "Value": {
+                "id": "6fa5956f-0e5f-47e1-afbd-060a550adb41",
+                "resourcePath": "sprites\\s_bars\\s_bars.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

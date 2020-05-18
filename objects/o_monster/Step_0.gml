@@ -1,5 +1,4 @@
 /// @description Update monster 
-exit; //FIXME
 
 if (state != mon_state.dead){
 	frame = (frame + 5 / room_speed) % total_frames;
@@ -38,9 +37,7 @@ switch (state){
 		attack_offset_x = lerp(x, target.x, state_time / attack_anim_time) - x;
 		attack_offset_y = lerp(y, target.y, state_time / attack_anim_time) - y;
 		if (state_time > attack_anim_time){
-			with(target){
-				hp -= attack;	
-			}
+			target.hp -= attack;
 			start_damage(target.x, target.y, attack);
 			state = change_state(state, mon_state.returning);
 		}
@@ -59,4 +56,8 @@ switch (state){
 			instance_destroy();
 		}
 		break;
+}
+
+if (hp <= 0){
+	state = change_state(state, mon_state.dead)	
 }

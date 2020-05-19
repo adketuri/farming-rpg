@@ -5,7 +5,7 @@ if (!show_inventory) exit;
 draw_set_alpha(0.5);
 draw_rectangle_color(0, 0, gui_width, gui_height, c_black, c_black, c_black, c_black, false);
 draw_set_alpha(1);
-draw_sprite_ext(s_inventory_ui, 0, inv_ui_x, inv_ui_y, scale, scale, 0, c_white, 1);
+draw_sprite_part(s_inventory_ui, 0, 0, 0, 170, 100, inv_ui_x, inv_ui_y);
 
 draw_set_font(f_text);
 var c = c_white;

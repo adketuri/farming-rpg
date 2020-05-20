@@ -5,7 +5,7 @@ if (!show_inventory) exit;
 draw_set_alpha(0.5);
 draw_rectangle_color(0, 0, gui_width, gui_height, c_black, c_black, c_black, c_black, false);
 draw_set_alpha(1);
-draw_sprite_part(s_inventory_ui, 0, 0, 0, 170, 100, inv_ui_x, inv_ui_y);
+draw_sprite_part(s_inventory_ui, 0, 0, 0, inv_ui_w, inv_ui_h, inv_ui_x, inv_ui_y);
 
 draw_set_font(f_text);
 var c = c_white;
@@ -24,7 +24,7 @@ draw_text_color(money_x, info_y, string(info_grid[# 1, 0]) + " Flips", c, c, c2,
 var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
 ii = 0; ix = 0; iy = 0; inv_grid = ds_inventory;
 draw_set_font(f_nums);
-draw_set_halign(fa_left)
+draw_set_halign(fa_left);
 repeat (inv_slots){
 	// x, y location for slot
 	xx = slots_x + ((cell_size + x_buffer)*ix*scale);
@@ -74,7 +74,7 @@ if (selected_slot >= 0){
 	var iinfo_grid = ds_items_info, description = "",
 	iitem = inv_grid[# 0, selected_slot];
 	if (iitem > 0){
-		description = iinfo_grid[# 0, iitem] + " - " + iinfo_grid[# 1, iitem]
+		description = iinfo_grid[# 0, iitem] + "\n" + iinfo_grid[# 1, iitem]
 		draw_text_color(desc_x + 2 * scale, desc_y + 0 * scale, description, c_black, c_black, c_black, c_black, 1);
 		draw_text_color(desc_x + 1 * scale, desc_y - 1 * scale, description, c, c, c2, c2, 1);
 	}

@@ -52,7 +52,7 @@ draw_text_color(xx + 1, yy - 1, "Day: " + string(daycycle.day), c, c, c2, c2, 1)
 var inv_width = 170;
 gui_x = gui_width / 2 - inv_width / 2;
 gui_y = 5;
-draw_sprite_part_ext(s_inventory_ui, 0, 0, 102, inv_width, 18, gui_x, gui_y, 1, 1, c_white, 0.7);
+draw_sprite_part_ext(s_inventory_ui, 0, 0, 112, inv_width, 18, gui_x, gui_y, 1, 1, c_white, 0.7);
 
 // Draw inventory
 var ii = 0;

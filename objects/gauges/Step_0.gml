@@ -2,13 +2,12 @@
 
 if (mouse_wheel_down()){
 	selected = (selected + 1) mod slots
-	selected_item = inventory.ds_inventory[# 0, selected]
 } else if (mouse_wheel_up()){
 	selected--;
 	if (selected < 0){
 		selected = slots - 1;	
 	}
-	selected_item = inventory.ds_inventory[# 0, selected]
 }
+selected_item = inventory.ds_inventory[# 0, selected]
 
 

@@ -1,5 +1,5 @@
 /// @description Draw mouse cursor in planting mode
- if (!planting) exit;
+ if (select_crop < 0) exit;
  
  var xx = (mx div cell_size) * cell_size;
  var yy = (my div cell_size) * cell_size;

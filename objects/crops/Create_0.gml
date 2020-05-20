@@ -17,10 +17,10 @@ create_crop_type(3, 30, "chili"); // chili
 create_crop_type(2, 20, "cucumber"); // cucumber
 create_crop_type(5, 50, "corn"); // corn
 
-planting = false;
-select_crop = 0;
+select_crop = -1;
 
 mx = 0;
 my = 0;
 
+inv_grid = inventory.ds_inventory;
 cell_size = 16;

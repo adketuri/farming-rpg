@@ -1,8 +1,6 @@
 /// @description Initialize crop instances
 
 if (room == rm_3) {
-	show_debug_message("-----------------------------------------------------");
-	
 	ds_crops_instances = ds_grid_create(room_width div cell_size, room_height div cell_size);
 	ds_grid_clear(ds_crops_instances, 0);
 	

@@ -3,10 +3,17 @@ if (mouse_check_button_pressed(mb_left)) {
 		instance_destroy(o_goal);
 	}
 	instance_create_layer(mouse_x, mouse_y, "Instances", o_goal);
-	begin_movement(o_goal.x, o_goal.y, 100)
+	begin_movement(o_goal.x, o_goal.y, 100);
 	if (overlapping){
 		target = overlapping;	
 	} else {
 		target = -1;
+		if (soil_at(mouse_x, mouse_y) && gauges.selected_item >= item.tomato_seed && gauges.selected_item <= item.corn_seed){
+			plant_target_x = mouse_x;
+			plant_target_y = mouse_y;
+		} else {
+			plant_target_x = -1;
+			plant_target_y = -1;
+		}
 	}
 }

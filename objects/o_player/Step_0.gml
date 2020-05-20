@@ -7,8 +7,15 @@ switch (state) {
 	case player_state.idle:
 	case player_state.moving:
 		player_check_mouse_click();
-		// Check if we can switch in/out of combat mode
-		if (target != -1 && distance_to_object(target) < 5 && target.hp > 0){
+		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 5){
+			// Check if we can plant
+			instance_destroy(o_goal);
+			if (path_exists(my_path)){
+				path_delete(my_path);
+			}
+			change_player_facing(plant_target_x, plant_target_y);
+			state = change_state(state, player_state.planting);
+		} else if (target != -1 && distance_to_object(target) < 5 && target.hp > 0){
 			// Remove path, begin attacking
 			if (instance_exists(o_goal)){
 				instance_destroy(o_goal);
@@ -16,21 +23,7 @@ switch (state) {
 			if (path_exists(my_path)){
 				path_delete(my_path);
 			}
-			if (abs(target.x - x) < abs(target.y - y)){
-				// face up or down	
-				if (target.y > y){
-					facing = dir.down;	
-				} else {
-					facing = dir.up;
-				}
-			} else {
-				// face left or right
-				if (target.x > x){
-					facing = dir.right;	
-				} else {
-					facing = dir.left;
-				}
-			}
+			change_player_facing(target.x, target.y);
 			state = change_state(state, player_state.combat);
 		} 
 		break;
@@ -58,6 +51,15 @@ switch (state) {
 				}
 			}
 			state = change_state(state, player_state.combat);
+		}
+		break;
+	case player_state.planting:
+		//player_check_mouse_click();
+		if (state_time >= 5){
+			with (crops){
+				event_user(2);	
+			}
+			state = change_state(state, player_state.idle);
 		}
 		break;
 	default:
@@ -104,13 +106,13 @@ if (instance_exists (o_goal) && path_position < 1){
 
 var combat = state == player_state.combat || state == player_state.attacking;
 // Update x frame
-if (!combat && last_x == x && last_y == y){
+if (!combat && state != player_state.planting && last_x == x && last_y == y){
 	x_frame = 1;
 } else {
 	last_x = x;
 	last_y = y;
 }
-x_frame += anim_speed / room_speed;
+x_frame += anim_speed / room_speed;	
 if (state != player_state.attacking){
 	x_frame = x_frame mod anim_length;
 }
@@ -125,6 +127,9 @@ if (!combat) {
 		y_frame = 3; 	
 	} else if (facing == dir.down) {
 		y_frame = 0;	
+	}
+	if (state == player_state.planting){
+		y_frame += 8;	
 	}
 	anim_length = 4;
 } else {

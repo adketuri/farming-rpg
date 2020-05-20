@@ -8,6 +8,4 @@ if (mouse_wheel_down()){
 		selected = slots - 1;	
 	}
 }
-selected_item = inventory.ds_inventory[# 0, selected]
-
-
+selected_item = inventory.ds_inventory[# 0, selected];

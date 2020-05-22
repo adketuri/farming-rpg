@@ -6,9 +6,11 @@ if (mouse_check_button_pressed(mb_left)) {
 	begin_movement(o_goal.x, o_goal.y, 100);
 	if (overlapping){
 		target = overlapping;	
+		plant_target_x = -1;
+		plant_target_y = -1;
 	} else {
 		target = -1;
-		if (soil_at(mouse_x, mouse_y) && gauges.selected_item >= item.tomato_seed && gauges.selected_item <= item.corn_seed){
+		if (soil_at(mouse_x, mouse_y) && inventory.quick_selected_item >= item.tomato_seed && inventory.quick_selected_item <= item.corn_seed){
 			plant_target_x = mouse_x;
 			plant_target_y = mouse_y;
 		} else {

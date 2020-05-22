@@ -1,5 +1,44 @@
 /// @description Draw inventory
 
+var c = c_white;
+var c2 = c_gray;
+
+#region draw quickbar
+var inv_width = 170;
+var bar_x = gui_width / 2 - inv_width / 2;
+var bar_y = 5;
+draw_sprite_part_ext(s_inventory_ui, 0, 0, 112, inv_width, 18, bar_x, bar_y, 1, 1, c_white, 0.7);
+
+var ii = 0;
+var inv_grid = ds_inventory;
+var bx = bar_x - 13;
+var by = bar_y + 1;
+repeat(quick_slots){
+	bx += 20;
+	var iitem = inv_grid[# 0, ii];
+	var sx = (iitem mod inv_columns) * cell_size;
+	var sy = (iitem div inv_columns) * cell_size;
+	
+	draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, bx, by, 1, 1, c_white, 1);
+	if (ii == quick_selected_index){
+		gpu_set_blendmode(bm_add);
+		draw_sprite_part_ext(s_inventory_items, 0, sx, sy, cell_size, cell_size, bx, by, 1, 1, c_white, 1);
+		gpu_set_blendmode(bm_normal);	
+	}
+	var number = inv_grid[# 1, ii];
+	if (number > 0){
+		draw_text_color(bx + 2, by + 0, string(number), c_black, c_black, c_black, c_black, 1);
+		draw_text_color(bx + 1, by - 1, string(number), c, c, c2, c2, 1);
+	}
+	ii++;
+}
+
+// Draw selected box
+bar_x = bar_x + quick_selected_index * 20 + 5
+bar_y = bar_y - 1
+draw_sprite_part_ext(s_inventory_ui, 0, 0, 130, 20, 20, bar_x, bar_y, 1, 1, c_white, 1);
+#endregion
+
 if (!show_inventory) exit;
 
 draw_set_alpha(0.5);
@@ -8,8 +47,7 @@ draw_set_alpha(1);
 draw_sprite_part(s_inventory_ui, 0, 0, 0, inv_ui_w, inv_ui_h, inv_ui_x, inv_ui_y);
 
 draw_set_font(f_text);
-var c = c_white;
-var c2 = c_gray;
+
 
 // Draw Info
 var info_grid = ds_player_info;
@@ -21,7 +59,7 @@ draw_text_color(money_x + 1 * scale, info_y + 1 * scale, string(info_grid[# 1, 0
 draw_text_color(money_x, info_y, string(info_grid[# 1, 0]) + " Flips", c, c, c2, c2, 1);
 
 // Draw Inventory
-var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
+var ii, ix, iy, xx, yy, sx, sy, iitem;
 ii = 0; ix = 0; iy = 0; inv_grid = ds_inventory;
 draw_set_font(f_nums);
 draw_set_halign(fa_left);

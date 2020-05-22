@@ -1,5 +1,16 @@
 /// @description Toggle menu
 
+// Check for a quickslot update
+if (mouse_wheel_down()){
+	quick_selected_index = (quick_selected_index + 1) mod quick_slots
+} else if (mouse_wheel_up()){
+	quick_selected_index--;
+	if (quick_selected_index < 0){
+		quick_selected_index = quick_slots - 1;	
+	}
+}
+quick_selected_item = ds_inventory[# 0, quick_selected_index];
+
 if (keyboard_check_pressed(vk_escape)) show_inventory = !show_inventory;
 
 if (!show_inventory) {

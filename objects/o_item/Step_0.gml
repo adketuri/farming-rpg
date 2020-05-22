@@ -54,5 +54,5 @@ if (drop_move){
 			}
 		}
 	}
-	angle += room_speed / 1000;
+	angle += room_speed / 2000;
 }

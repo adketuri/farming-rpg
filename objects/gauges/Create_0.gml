@@ -21,6 +21,3 @@ gui_y = -1;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-selected = 0;
-selected_item = 0;
-slots = 8;

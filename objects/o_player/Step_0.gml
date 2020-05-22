@@ -7,7 +7,7 @@ switch (state) {
 	case player_state.idle:
 	case player_state.moving:
 		player_check_mouse_click();
-		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 5){
+		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 2){
 			// Check if we can plant
 			instance_destroy(o_goal);
 			if (path_exists(my_path)){
@@ -54,7 +54,6 @@ switch (state) {
 		}
 		break;
 	case player_state.planting:
-		//player_check_mouse_click();
 		if (state_time >= 5){
 			with (crops){
 				event_user(2);	

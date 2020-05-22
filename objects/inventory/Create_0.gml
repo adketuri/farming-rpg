@@ -78,6 +78,10 @@ enum item_attribs {
 	description,
 }
 
+quick_selected_index = 0;
+quick_selected_item = 0;
+quick_slots = 8;
+
 #region create items info grid
 ds_items_info = ds_grid_create(2, item.height);
 var z = item_attribs.name, i = 0;

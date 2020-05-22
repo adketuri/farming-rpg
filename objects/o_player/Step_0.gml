@@ -7,7 +7,7 @@ switch (state) {
 	case player_state.idle:
 	case player_state.moving:
 		player_check_mouse_click();
-		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 2){
+		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 4){
 			// Check if we can plant
 			instance_destroy(o_goal);
 			if (path_exists(my_path)){
@@ -15,21 +15,26 @@ switch (state) {
 			}
 			change_player_facing(plant_target_x, plant_target_y);
 			state = change_state(state, player_state.planting);
-		} else if (target != -1 && distance_to_object(target) < 5 && target.hp > 0){
-			// Remove path, begin attacking
+		} else if (target != -1 && distance_to_object(target) < 4){
+			// Remove path
 			if (instance_exists(o_goal)){
 				instance_destroy(o_goal);
 			}
 			if (path_exists(my_path)){
 				path_delete(my_path);
 			}
+			// begin attacking or harvesting
 			change_player_facing(target.x, target.y);
-			state = change_state(state, player_state.combat);
+			if (target_type == overlap_types.monster && target.hp > 0){
+				state = change_state(state, player_state.combat);
+			} else if (target_type == overlap_types.crop && target.fully_grown){
+				state = change_state(state, player_state.harvesting);	
+			}
 		} 
 		break;
 	case player_state.combat:
 		player_check_mouse_click();	
-		if (target == -1 || distance_to_object(target) > 5 || target.hp <= 0){
+		if (target == -1 || distance_to_object(target) > 4 || target.hp <= 0){
 			state = change_state(state, player_state.idle);
 			target = -1;
 		} else if (state_time >= time_to_attack){
@@ -54,10 +59,32 @@ switch (state) {
 		}
 		break;
 	case player_state.planting:
-		if (state_time >= 5){
+		if (state_time >= time_to_plant){
 			with (crops){
 				event_user(2);	
 			}
+			state = change_state(state, player_state.idle);
+		}
+		break;
+	case player_state.harvesting:
+		if (state_time >= time_to_harvest){
+			with (target){
+				repeat(random_range(1, 3)){
+					// Create the item in the game world
+					var inst = instance_create_layer(x, y, "Instances", o_item);
+					var dropped_item = crop_type
+					with (inst){
+						item_num = dropped_item;
+						x_frame = item_num mod (o_item.spr_width / 16);
+						y_frame = item_num div (o_item.spr_width / 16);	
+					}
+				}
+				var cx = o_player.target.x div 16;
+				var cy = o_player.target.y div 16;
+				show_debug_message("Removing at " + string(cx) + " " + string(cy));
+				crops.ds_crops_instances[# cx, cy] = 0;
+			}
+			instance_destroy(target);
 			state = change_state(state, player_state.idle);
 		}
 		break;
@@ -105,7 +132,7 @@ if (instance_exists (o_goal) && path_position < 1){
 
 var combat = state == player_state.combat || state == player_state.attacking;
 // Update x frame
-if (!combat && state != player_state.planting && last_x == x && last_y == y){
+if (!combat && state != player_state.planting && state != player_state.harvesting && last_x == x && last_y == y){
 	x_frame = 1;
 } else {
 	last_x = x;
@@ -127,7 +154,7 @@ if (!combat) {
 	} else if (facing == dir.down) {
 		y_frame = 0;	
 	}
-	if (state == player_state.planting){
+	if (state == player_state.planting || state == player_state.harvesting){
 		y_frame += 8;	
 	}
 	anim_length = 4;

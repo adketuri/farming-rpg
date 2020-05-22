@@ -1,8 +1,8 @@
 /// @description Move drops
 if (drop_move){
 	// Move away from player
-	x = lerp(x, goal_x, 0.1);
-	y = lerp(y, goal_y, 0.1);
+	x = lerp(x, goal_x, room_speed / 2000);
+	y = lerp(y, goal_y, room_speed / 2000);
 	if (abs(x - goal_x) < 1 && abs(y - goal_y) < 1){
 		drop_move = false;	
 	}

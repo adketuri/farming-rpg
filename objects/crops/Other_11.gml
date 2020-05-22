@@ -1,6 +1,5 @@
 /// @description Update crop data
-// TODO: Is this actually still used?
-show_debug_message("crops user event is not safe to delete");
+
 if (room ==	 rm_3){
 	if (instance_exists(o_crop)){
 		with(o_crop){

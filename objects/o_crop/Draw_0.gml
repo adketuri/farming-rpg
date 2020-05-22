@@ -3,7 +3,7 @@ draw_sprite_part(
 	s_crops, 
 	0, 
 	growth_stage * frame_width, 
-	crop_type * frame_height, 
+	(crop_type - 1) * frame_height, 
 	frame_width, 
 	frame_height, 
 	xx, 

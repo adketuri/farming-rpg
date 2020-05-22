@@ -42,11 +42,17 @@ enum player_state {
 // Combat
 movement_grid = -1;
 overlapping = -1; // currently overlapped enemy
+overlapping_type = -1;
 target = -1; // currently targeted (clicked) enemy
-plant_target_x = -1;
-plant_target_y = -1;
+target_type = -1;
 state = player_state.idle;
 state_time = 0;
+
+// Farming and harvesting
+plant_target_x = -1;
+plant_target_y = -1;
+time_to_plant = 1;
+time_to_harvest = 1;
 
 // stats
 attack = 10;

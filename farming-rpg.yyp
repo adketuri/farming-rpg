@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "4bb99cba-4936-4eee-a67b-6befdb3a8551",
+            "Value": {
+                "id": "287e311f-73e0-445c-b11d-80b4a7669325",
+                "resourcePath": "sounds\\snd_talk\\snd_talk.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "50a93a33-7fbe-4da2-aa01-bb449d3cb864",
             "Value": {
                 "id": "dbb3982c-a179-4810-bbc7-19e7a36705a0",
@@ -300,6 +308,14 @@
                 "id": "f240e888-695e-4b10-806d-2bd2c883270c",
                 "resourcePath": "sprites\\s_player\\s_player.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "56fd0dc4-5d0c-4c32-a597-10c0bab7742b",
+            "Value": {
+                "id": "1601080d-020c-4e7f-81d0-8e1137ae0359",
+                "resourcePath": "scripts\\string_wrap\\string_wrap.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -837,7 +853,8 @@
         "9c526df0-e566-41c6-8629-eec691c48da3",
         "a84fe7d6-ea9d-4463-8100-08aac38e5e61",
         "b58740ce-86cb-43e9-b234-86d45d707c78",
-        "9ea54480-9473-4183-a667-f43c7b2e3ba1"
+        "9ea54480-9473-4183-a667-f43c7b2e3ba1",
+        "56fd0dc4-5d0c-4c32-a597-10c0bab7742b"
     ],
     "tutorial": ""
 }

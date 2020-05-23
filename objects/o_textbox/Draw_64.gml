@@ -20,5 +20,26 @@ draw_text_color(name_text_x, name_text_y, name, c, c, c, c, 1);
 draw_set_halign(fa_left); draw_set_valign(fa_top);
 
 // Draw text
+if (!pause && counter < str_len) {
+	counter += delta_time / 15000;
+	sound_counter += 1;
+	if (sound_counter mod 6 == 0) {
+		audio_play_sound(snd_talk, 10, false);
+	}
+	
+	switch (string_char_at(text_wrapped, counter)){
+		case ",": 
+			pause = true;
+			alarm[1] = 10;
+			break;	
+		case ".":	
+		case "?":	
+		case "!": 
+			pause = true;
+			alarm[1] = 20;
+			break;	
+	}
+}
+var substr = string_copy(text_wrapped, 1, floor(counter));
 c = text_col;
-draw_text_ext_color(text_x, text_y, text[page], text_height, text_width, c, c, c, c, 1);
+draw_text_color(text_x, text_y, substr, c, c, c, c, 1);

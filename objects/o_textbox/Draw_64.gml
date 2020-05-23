@@ -24,9 +24,9 @@ if (!pause && counter < str_len) {
 	counter += delta_time / 15000;
 	sound_counter += 1;
 	if (sound_counter mod 6 == 0) {
-		audio_play_sound(snd_talk, 10, false);
+		var talk = audio_play_sound(snd_talk, 10, false);
+		audio_sound_pitch(talk, voice_pitch);
 	}
-	
 	switch (string_char_at(text_wrapped, counter)){
 		case ",": 
 			pause = true;

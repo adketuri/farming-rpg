@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "955cab90-5bd4-40cb-bea3-fd8505308205",
+            "Value": {
+                "id": "dec0e097-2b76-43ac-9454-6421230f61b6",
+                "resourcePath": "scripts\\create_textbox\\create_textbox.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "979f6d5e-2b33-40fb-a8e1-374adfd0fb16",
             "Value": {
                 "id": "6fa5956f-0e5f-47e1-afbd-060a550adb41",
@@ -854,7 +862,8 @@
         "a84fe7d6-ea9d-4463-8100-08aac38e5e61",
         "b58740ce-86cb-43e9-b234-86d45d707c78",
         "9ea54480-9473-4183-a667-f43c7b2e3ba1",
-        "56fd0dc4-5d0c-4c32-a597-10c0bab7742b"
+        "56fd0dc4-5d0c-4c32-a597-10c0bab7742b",
+        "955cab90-5bd4-40cb-bea3-fd8505308205"
     ],
     "tutorial": ""
 }

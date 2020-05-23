@@ -18,3 +18,10 @@ x_offset = sprite_get_xoffset(mask_index);
 y_offset = sprite_get_yoffset(mask_index);
 
 alarm[1] = 1;
+can_move = true;
+
+portrait_index = 0;
+voice_pitch = 1;
+name = "Person";
+text = ["<Unspecified dialogue>"];
+speakers = [id];

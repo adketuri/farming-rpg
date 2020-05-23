@@ -7,7 +7,21 @@ switch (state) {
 	case player_state.idle:
 	case player_state.moving:
 		player_check_mouse_click();
-		if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 4){
+		if (target != -1 && target_type == overlap_types.npc && active_textbox == noone){
+			change_player_facing(target.x, target.y);
+			state = change_state(state, player_state.talking);
+			with (target){
+				o_player.active_textbox = create_textbox(text, speakers)
+				can_move = false;
+				move_x = 0;
+				move_y = 0;
+			}
+			target = -1;
+			instance_destroy(o_goal);
+			if (path_exists(my_path)){
+				path_delete(my_path);
+			}
+		} else if (plant_target_x != -1 && instance_exists(o_goal) && distance_to_object(o_goal) < 4){
 			// Check if we can plant
 			instance_destroy(o_goal);
 			if (path_exists(my_path)){
@@ -85,6 +99,12 @@ switch (state) {
 				crops.ds_crops_instances[# cx, cy] = 0;
 			}
 			instance_destroy(target);
+			state = change_state(state, player_state.idle);
+		}
+		break;
+	case player_state.talking:
+		if (!instance_exists(active_textbox)){
+			active_textbox = noone;	
 			state = change_state(state, player_state.idle);
 		}
 		break;

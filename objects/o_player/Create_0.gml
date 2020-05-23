@@ -37,6 +37,7 @@ enum player_state {
 	attacking,
 	planting,
 	harvesting,
+	talking,
 }
 
 // Combat
@@ -58,6 +59,13 @@ time_to_harvest = 1;
 attack = 10;
 max_hp = 100;
 hp = max_hp;
-time_to_attack = 2;
+time_to_attack = 1;
 max_satiety = 1000;
 satiety = max_satiety;
+
+// dialogue
+portrait_index = 0;
+voice_pitch = 1;
+name = "Amalia";
+
+active_textbox = noone;

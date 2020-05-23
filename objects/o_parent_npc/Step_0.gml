@@ -1,4 +1,21 @@
 /// @description Move NPC
+if (!can_move) {
+	// face the player
+	if (abs(x - o_player.x) > abs(y - o_player.y)){
+		if (x < o_player.x){
+			y_frame = 1; // right	
+		} else {
+			y_frame = 2; // left
+		}
+	} else {
+		if (y < o_player.y){
+			y_frame = 0; 
+		} else {
+			y_frame = 3;
+		}
+	}
+	exit;
+}
 
 // check for a collision
 collision_layer = layer_tilemap_get_id("Collisions")

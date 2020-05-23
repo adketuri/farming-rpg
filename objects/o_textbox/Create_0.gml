@@ -17,4 +17,23 @@ box_y = global.game_height - box_height - pad;
 namebox_x = portrait_x + port_width / 2;
 namebox_y = box_y - namebox_height;
 
+font = f_text;
+draw_set_font(font);
+x_buffer = port_width / 2 + 1;
+y_buffer = 5;
+text_x = box_x + x_buffer;
+text_y = box_y + y_buffer;
+text_width = box_width - x_buffer - 4;
+text_height = string_height("M");
+name_text_x = namebox_x + x_buffer;
+name_text_y = namebox_y + y_buffer;
+
 portrait_index = 0;
+text[0] = "My name is Amiru. Or was it Andoru? Or Amalia? or Andrew?? I forget!!"
+text[1] = "Actually, what's it matter? It's just text on the screen."
+page = 0;
+name = "Amiru?";
+interact_key = vk_space;
+
+text_col = c_white;
+name_text_col = c_yellow;

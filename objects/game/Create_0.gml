@@ -2,7 +2,6 @@ debug = false;
 randomize();
 room_goto_next();
 
-display_set_gui_size(320,240);
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 black_alpha = 0;
@@ -19,6 +18,10 @@ enum dir {
 	left = 180, 
 	down = 270,
 }
+
+global.game_width = 320;
+global.game_height = 240;
+display_set_gui_size(global.game_width, global.game_height);
 
 //window_set_cursor(cr_none);
 //cursor_sprite = s_cursor;

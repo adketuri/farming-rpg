@@ -25,3 +25,4 @@ voice_pitch = 1;
 name = "Person";
 text = ["<Unspecified dialogue>"];
 speakers = [id];
+next_line = [0];

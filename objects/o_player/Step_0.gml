@@ -86,7 +86,7 @@ switch (state) {
 				repeat(random_range(1, 3)){
 					// Create the item in the game world
 					var inst = instance_create_layer(x, y, "Instances", o_item);
-					var dropped_item = crop_type
+					var dropped_item = crop_type;
 					with (inst){
 						item_num = dropped_item;
 						x_frame = item_num mod (o_item.spr_width / 16);

@@ -42,4 +42,8 @@ name = "";
 text[0] = "";
 
 text_col = c_white;
-name_text_col = c_yellow;
+name_text_col = c_aqua;
+
+text_array_len = 0;
+choice = 0;
+choice_dialogue = false;

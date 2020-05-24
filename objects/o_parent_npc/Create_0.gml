@@ -26,3 +26,4 @@ name = "Person";
 text = ["<Unspecified dialogue>"];
 speakers = [id];
 next_line = [0];
+scripts = -1;

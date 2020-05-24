@@ -2,12 +2,14 @@
 ///@arg text
 ///@arg speakers
 ///@arg next_line
+///@arg scripts
 
 var tbox = instance_create_layer(0, 0, "Text", o_textbox);
 with (tbox){
 	text = argument0;
 	speakers = argument1;
 	next_line = argument2;
+	scripts = argument3;
 	
 	var len = array_length_1d(text);
 	var i = 0; repeat(len){

@@ -11,7 +11,7 @@ switch (state) {
 			change_player_facing(target.x, target.y);
 			state = change_state(state, player_state.talking);
 			with (target){
-				o_player.active_textbox = create_textbox(text, speakers, next_line);
+				o_player.active_textbox = create_textbox(text, speakers, next_line, scripts);
 				can_move = false;
 				move_x = 0;
 				move_y = 0;

@@ -2,6 +2,9 @@ if (keyboard_check_pressed(interact_key) || mouse_check_button_pressed(mb_left))
 	if (!choice_dialogue && counter < str_len) {
 		counter = str_len;	
 	} else if (page < array_length_1d(text) - 1) {
+		
+		event_perform(ev_other, ev_user2);
+		
 		var line = next_line[page];
 		if (choice_dialogue){
 			line = line[choice];	

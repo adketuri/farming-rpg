@@ -1,5 +1,5 @@
 name = names[page];
-voice = voices[page];
+voice_pitch = voices[page];
 portrait_index = portraits[page];
 
 text_wrapped = string_wrap(text[page], text_width);
